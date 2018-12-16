@@ -1,10 +1,97 @@
 extends ../main.layout.pug
 
 block variables
-  - var title = 'Обо мне'
+	- var title = 'Обо мне'
 
 block scripts
-  script(src='about.bundle.js')
+	script(src='about.bundle.js')
 
 block content
-  h1 Страничка "Обо Мне"  
+	section.hero
+		.hero-row
+			.hero__links
+				ul.socials
+					- var socials = ['vk', 'github', 'in']
+						each item in socials
+							li.socials__item
+								a(href="#" class=`socials__link_${item}`).socials__link
+									svg.svg__socials
+										use(xlink:href="/assets/images/icons/sprite.svg#"+item)
+				
+			.hero__menu.hamburger
+				svg.svg__hamburger
+					use(xlink:href="/assets/images/icons/sprite.svg#hamburger")
+
+		.hero__container
+			.section-title
+				svg.svg-title
+					use(xlink:href="/assets/images/icons/sprite.svg#portfolio_header")
+			.user
+				.user__avatar(style="background-image: url(assets/images/avatar.jpg);")
+				.user__info
+					.user__name Сергей Курников
+					.user__desc Личный сайт веб-разработчика
+
+		button.hero__btn
+			svg.hero__btn-icon
+				use(xlink:href="/assets/images/icons/sprite.svg#arrow_down")
+	
+	section.about
+		.about__col.about__col_bg-white
+			.about__triangle
+				svg.svg-triangle.svg-triangle_fill_white
+					polygon()
+			.about__title
+				h2.title Обо мне
+			.about__desc
+				.user-desc
+					.user-desc__pic
+						img(src="", alt="").user-desc__pic-elem
+					.user-desc__info
+						h3.user-desc__title
+							.subtitle Кто я
+						.user-desc__text
+							p Я веб разработчик из Новосибирска. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+							p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+		.about__col.about__col_bg-beige
+			.about__triangle
+				svg.svg-triangle.svg-triangle_fill_beige
+					polygon()
+			.about__right-title
+				.subtitle Кто я
+			.about__small-desc
+				p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+			.about__info-container
+				ul.skills
+					-
+						var skills = [
+							['Frontend', ['HTML5', 'CSS3', 'JavaScript & jquery']],
+							['Backend', ['PHP', 'mySQL', 'Node.js & npm', 'Mongo.db']],
+							['Workwlow', ['Git', 'Gulp', 'Webpack']],
+						]
+					each item in skills
+						li.skils__item
+							.skills-row
+								.skills-row__title #{item[0]}
+									ul.skills-row__list
+										each skill in item[1]
+											li.skills-row__item
+												svg.skill #{skill}
+
+	section.contacts
+		.contacts__overlay
+			.google-map
+		.contacts__container
+			.user-data
+				.user-data__title
+					subtitle Контакты
+				.user-data__container
+					ul.user-contacts-list
+						each item in ['skype', 'mail', 'phone']
+							li.user-contacts-list__item
+								.contacts-cell
+									.contacts-cell__icon
+									.contacts-cell__title #{item}
+
+
+
