@@ -38,46 +38,55 @@ block content
 	
 	section.about
 		.about__col.about__col_bg-white
-			.about__triangle
-				svg.svg-triangle.svg-triangle_fill_white
-					polygon()
-			.about__title
-				h2.title Обо мне
-			.about__desc
-				.user-desc
-					.user-desc__pic
-						img(src="", alt="").user-desc__pic-elem
-					.user-desc__info
-						h3.user-desc__title
-							.subtitle Кто я
-						.user-desc__text
-							p Я веб разработчик из Новосибирска. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-							p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+			.works__triangles
+				svg(fill="#efeee9", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
+					polygon(points="0,0 0,150 900,150")
+			.about__user
+				.about__title
+					.section-title__about
+						.overlay-svg
+							svg.svg-title__about
+								use(xlink:href="/assets/images/icons/sprite.svg#about_header")
+							h2.title Обо мне
+				.about__desc
+					.user-desc
+						.user-desc__pic(style="background-image: url(assets/images/avatar.jpg);")
+						.user-desc__info
+							h3.title.title--subtitle Кто я
+							.user-desc__text.text-block
+								p.one Я веб разработчик из Новосибирска. Мне 28 лет. 
+								| Я занимаюсь разработкой современных сайтов
+								| и приложений. Мне нравится делать интересные 
+								| и современные проекты.
+								p.two Этот сайт я сделал в рамках обучения в Школе онлайн 
+								| образования LoftSchool. Чуть позже я освежу в нём
+								| свой контент. А пока посмотрите, как тут всё 
+								| классно и красиво!
 		.about__col.about__col_bg-beige
-			.about__triangle
-				svg.svg-triangle.svg-triangle_fill_beige
-					polygon()
+			.works__triangles
+				svg(fill="#eeebdf", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
+					polygon(points="0,150 900,150 900,0")
 			.about__right-title
-				.subtitle Кто я
-			.about__small-desc
-				p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+				h3.title.title--subtitle.title--nomargin Чем я могу быть 
+				h3.title--text-down Вам полезен
+			.about__small-desc.text-block
+				p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи
+				| на Backend. Но давайте по порядку.
 			.about__info-container
+				- var skills = [['Frontend', [['HTML5', 230], ['CSS3', 230], ['JavaScript & jQuery', 180]]],['Backend', [['PHP',150], ['mySQL',150], ['Node.js & npm',180], ['Mongo.db',180]]],['Workflow', [['Git',220], ['Gulp',200], ['Bower',200]]]]
 				ul.skills
-					-
-						var skills = [
-							['Frontend', ['HTML5', 'CSS3', 'JavaScript & jquery']],
-							['Backend', ['PHP', 'mySQL', 'Node.js & npm', 'Mongo.db']],
-							['Workwlow', ['Git', 'Gulp', 'Webpack']],
-						]
-					each item in skills
-						li.skils__item
-							.skills-row
-								.skills-row__title #{item[0]}
-									ul.skills-row__list
-										each skill in item[1]
-											li.skills-row__item
-												svg.skill #{skill}
-
+					each skillsrow in skills
+						li.skills__item.skills-row
+							.skills-row__title #{skillsrow[0]}
+							ul.skills-row__list
+								each skill in skillsrow[1]
+									li.skills-row__item
+										.skill
+											.skill__circle
+												svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+													circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+													circle(cx="50" cy="50" r="40" style="stroke-dasharray:"+skill[1]).skill__circle.skill__circle_above
+												.skill__title #{skill[0]}	
 	section.contacts
 		.contacts__overlay
 			.google-map
