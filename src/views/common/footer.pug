@@ -6,12 +6,14 @@ footer.footer
 					each item in ['Мои работы', 'Обо мне', 'Блог', 'Авторизация']
 						li.menu__item
 							a.menu__link #{item}
-		.footer__col_justify_right
+		.footer__col.footer__col_justify_right
 			ul.socials.socials_rounded
-				- var socials = ['vk', 'gh', 'in']
+				- var socials = ['vk', 'github', 'in']
 					each item in socials
-						li.socials__item
+						li.socials__item--border
 							a(href="#" class=`socials__link_${item}`).socials__link
+								svg.svg__socials-footer
+									use(xlink:href="/assets/images/icons/sprite.svg#"+item)
 	.footer__row
 		.footer__col
 			.copyright

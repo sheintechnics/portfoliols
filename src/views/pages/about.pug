@@ -4,7 +4,9 @@ block variables
 	- var title = 'Обо мне'
 
 block scripts
-	script(src='about.bundle.js')
+	//- script(src='about.bundle.js')
+	//- script(src='map.js') function initMap() {var uluru = {lat: -25.344, lng: 131.036}; var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru}); var marker = new google.maps.Marker({position: uluru, map: map});}
+	//- script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACbB1zw85rUBsteWgJMzTUtG7nGKfkoxw")
 
 block content
 	section.hero
@@ -84,23 +86,25 @@ block content
 										.skill
 											.skill__circle
 												svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
-													circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-													circle(cx="50" cy="50" r="40" style="stroke-dasharray:"+skill[1]).skill__circle.skill__circle_above
+													circle(cx="50" cy="50" r="30").skill__circle.skill__circle_under
+													circle(cx="50" cy="50" r="30" style="stroke-dasharray:"+skill[1]).skill__circle.skill__circle_above
 												.skill__title #{skill[0]}	
 	section.contacts
 		.contacts__overlay
-			.google-map
-		.contacts__container
-			.user-data
-				.user-data__title
-					subtitle Контакты
-				.user-data__container
-					ul.user-contacts-list
-						each item in ['skype', 'mail', 'phone']
-							li.user-contacts-list__item
-								.contacts-cell
-									.contacts-cell__icon
-									.contacts-cell__title #{item}
-
+			.google-map(id="map")
+			.contacts__container
+				.user-data
+					h3.user-data__title.title.title--subtitle Контакты
+					.user-data__container
+						- var contacts = [['skype', 'kur.ser'], ['mail', 'kur.ser@mail.ru'], ['phone', '+7 920 654 25 25'], ['map_marker', 'г.Новосибирск, ул. Инская, д. 5']]
+						ul.user-contacts-list
+							each contactsrow in contacts
+								li.user-contacts-list__item
+									.contacts-cell
+										.contacts-cell__icon
+											a(href="#" class=`socials__link_${contactsrow[1]}`).socials__link
+												svg.svg__socials-contact
+													use(xlink:href="/assets/images/icons/sprite.svg#"+contactsrow[0])
+										a(href="#" class=`socials__link_${contactsrow[1]}`).contacts-cell__title #{contactsrow[1]}
 
 

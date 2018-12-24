@@ -2,15 +2,6 @@
 	position: relative;
 	display: flex;
 	bottom: 100px;
-	// background-image: url(../assets/images/bg.svg);
-	// background-repeat: no-repeat;
-	// // background-position: center center;
-	// // background-attachment: fixed;
-	// background-size: cover;
-	// background-size: 100% auto;
-	// min-width: 1200px;
-	// height: 1013px;
-	// z-index: 5;
 }
 
 .about__col{
@@ -98,11 +89,6 @@
 	background-color: #373e42;
 	margin: 0 14px;
 	opacity: 0.2;
-}
-
-
-.user-desc {
-	// margin-left: 27px;
 }
 
 .user-desc__pic {
@@ -226,68 +212,6 @@
 }
 
 .skills-row__item {
-	width: 200px;
-	height: 200px;
+	width: 160px;
+	height: 160px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .about__col.about__col_bg-white {
-// 	height: 0;
-// 	width: 50%;
-// 	padding-top: 56.3%;
-// 	position: relative;
-// }
-// iframe {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-// }
-// .svg-triangle_fill_white {
-// 	position: relative;
-// 	width: 100%;
-// 	height: 1013px;
-// 	fill: #efeee9;
-// 	padding: 0;
-// 	margin: 0;
-// }
-
-// .svg-triangle_fill_beige {
-// 	width: 100%;
-// 	height: 1013px;
-// 	fill: #efeee9;
-// 	padding: 0;
-// 	margin: 0;
-// }
-// .about__col.about__col_bg-white {
-// 	background-image: url(../assets/images/about_bg_left.svg);
-// 	background-size: contain;
-// 	background-repeat: no-repeat;
-// 	height: 1013px;
-// 	width: 50%;
-// 	position: relative;
-// 	top: -250px;
-// }
-// .about__col.about__col_bg-beige {
-// 	background-image: url(../assets/images/about_bg_right.svg);
-// 	background-size: contain;
-// 	background-repeat: no-repeat;
-// 	height: 1013px;
-// 	width: 50%;
-// 	position: relative;
-// 	top: -250px;
-// }
