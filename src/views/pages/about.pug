@@ -18,16 +18,16 @@ block content
 							li.socials__item
 								a(href="#" class=`socials__link_${item}`).socials__link
 									svg.svg__socials
-										use(xlink:href="/assets/images/icons/sprite.svg#"+item)
+										use(xlink:href="assets/images/icons/sprite.svg#"+item)
 				
 			.hero__menu.hamburger
 				svg.svg__hamburger
-					use(xlink:href="/assets/images/icons/sprite.svg#hamburger")
+					use(xlink:href="assets/images/icons/sprite.svg#hamburger")
 
 		.hero__container
 			.section-title
 				svg.svg-title
-					use(xlink:href="/assets/images/icons/sprite.svg#portfolio_header")
+					use(xlink:href="assets/images/icons/sprite.svg#portfolio_header")
 			.user
 				.user__avatar(style="background-image: url(assets/images/avatar.jpg);")
 				.user__info
@@ -36,7 +36,7 @@ block content
 
 		button.hero__btn
 			svg.hero__btn-icon
-				use(xlink:href="/assets/images/icons/sprite.svg#arrow_down")
+				use(xlink:href="assets/images/icons/sprite.svg#arrow_down")
 	
 	section.about
 		.about__col.about__col_bg-white
@@ -48,7 +48,7 @@ block content
 					.section-title__about
 						.overlay-svg
 							svg.svg-title__about
-								use(xlink:href="/assets/images/icons/sprite.svg#about_header")
+								use(xlink:href="assets/images/icons/sprite.svg#about_header")
 							h2.title Обо мне
 				.about__desc
 					.user-desc
@@ -104,7 +104,7 @@ block content
 										.contacts-cell__icon
 											a(href="#" class=`socials__link_${contactsrow[1]}`).socials__link
 												svg.svg__socials-contact
-													use(xlink:href="/assets/images/icons/sprite.svg#"+contactsrow[0])
+													use(xlink:href="assets/images/icons/sprite.svg#"+contactsrow[0])
 										a(href="#" class=`socials__link_${contactsrow[1]}`).contacts-cell__title #{contactsrow[1]}
 
 
