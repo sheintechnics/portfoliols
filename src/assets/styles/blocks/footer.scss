@@ -96,10 +96,10 @@
 	z-index: 0;
 
 }
-// .socials__item--border:hover {
-// 	.svg__socials-footer{
-// 		fill: rgba(#373e42, 0.95);
-// 		position: relative;
-// 		z-index: 20;
-// 	}
-// }
+.socials__item--border:hover {
+	.svg__socials-footer{
+		fill: rgba(#373e42, 0.95);
+		position: relative;
+		z-index: 20;
+	}
+}
