@@ -2,13 +2,14 @@ extends ../main.layout.pug
 
 block variables
 	- var title = 'Обо мне'
+	- var number = 1
 
 block scripts
 	//- script(src='about.bundle.js')
 	//- script(src='map.js') function initMap() {var uluru = {lat: -25.344, lng: 131.036}; var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru}); var marker = new google.maps.Marker({position: uluru, map: map});}
 	//- script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACbB1zw85rUBsteWgJMzTUtG7nGKfkoxw")
 block content
-	section.about
+	main.about
 		.about__col.about__col_bg-white
 			.works__triangles
 				svg(fill="#efeee9", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
@@ -18,8 +19,6 @@ block content
 					.section-title__about
 						.overlay-svg
 							+icon("about_header", "svg-title__about")
-							//- svg.svg-title__about
-							//- 	use(xlink:href="assets/images/icons/sprite.svg#about_header")
 							h1.title Обо мне
 				.about__desc
 					.user-desc
