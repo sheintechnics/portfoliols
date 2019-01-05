@@ -27,7 +27,7 @@
 	margin-right: 28px;
 }
 
-.svg__socials {
+.socials__link-icon {
 	fill: #C5D5D3;
 	transition: .3s;
 	width: 100%;
@@ -36,7 +36,7 @@
 
 .socials__link {
 	&:hover {
-		.svg__socials {
+		.socials__link-icon {
 			fill: #fff;
 		}
 	}
@@ -68,7 +68,6 @@
 
 .section-title {
 	text-align: center;
-	margin-top: 65px;
 	fill: #fff;
 	position: relative;
 	z-index: 0;
@@ -155,6 +154,10 @@
 	}
 }
 
+.hero__btn-none {
+	display: none;
+}
+
 .hero__btn-icon {
 	width: 26px;
 	height: 15px;
@@ -163,5 +166,29 @@
 	transition: .3s;
 }
 
+
+.svg-title--blog {
+	position: relative;
+	top: 90px;
+	width: auto;
+}
+
+.title--blog {
+	color: #fff;
+	margin-top: 70px;
+}
+
+.title--blog::before {
+	background-color: #fff;
+}
+
+.title--blog::after {
+	background-color: #fff;
+}
+
+.user__desk--blog {
+	color: #fff;
+	margin-top: 90px;
+}
 
 

@@ -45,6 +45,12 @@
 	display: flex;	
 }
 
+.menu__item_active{
+	.menu__link{
+		color: #00bfa5;	
+	}	
+}
+
 .footer__row_border_bottom {
 	padding-bottom: 19px;
 	padding-top: 19px;		
@@ -80,7 +86,7 @@
 
 .svg__socials-footer {
 	fill: #fff;
-	opacity: 0.5;
+	// opacity: 0.5;
 	transition: .3s;
 	width: 60%;
 	height: 60%;

@@ -1,0 +1,17 @@
+extends ../main.layout.pug
+
+block variables
+	- var title = 'Блог'
+
+block scripts
+
+block title
+	.section-title
+		+icon("blog_header", "svg-title svg-title--blog")
+
+block hero__btn
+	button.hero__btn-none
+
+block user__info
+	h1.title.title--blog Блог
+	.user__desc.user__desk--blog Статьи, которые я написал

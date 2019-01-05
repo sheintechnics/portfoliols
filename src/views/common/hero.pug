@@ -1,0 +1,22 @@
+header.hero
+	.hero-row
+		.hero__links
+			+socials(["vk", "github", "in"], '', ["https://vk.com/id50684213", "https://github.com/SergeyKurnikov", "#"]) 
+			
+		.hero__menu.hamburger
+			+icon("hamburger", "svg__hamburger")
+
+	.hero__container
+		block title
+			.section-title
+				+icon("portfolio_header", "svg-title")
+
+		.user
+			.user__avatar(style="background-image: url(assets/images/avatar.jpg);")
+			block user__info
+				.user__info
+					.user__name Сергей Курников
+					.user__desc Личный сайт веб-разработчика
+	block hero__btn
+		button.hero__btn
+			+icon("arrow_down", "hero__btn-icon")

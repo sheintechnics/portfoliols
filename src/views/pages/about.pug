@@ -7,37 +7,7 @@ block scripts
 	//- script(src='about.bundle.js')
 	//- script(src='map.js') function initMap() {var uluru = {lat: -25.344, lng: 131.036}; var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru}); var marker = new google.maps.Marker({position: uluru, map: map});}
 	//- script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACbB1zw85rUBsteWgJMzTUtG7nGKfkoxw")
-
 block content
-	section.hero
-		.hero-row
-			.hero__links
-				ul.socials
-					- var socials = ['vk', 'github', 'in']
-						each item in socials
-							li.socials__item
-								a(href="#" class=`socials__link_${item}`).socials__link
-									svg.svg__socials
-										use(xlink:href="assets/images/icons/sprite.svg#"+item)
-				
-			.hero__menu.hamburger
-				svg.svg__hamburger
-					use(xlink:href="assets/images/icons/sprite.svg#hamburger")
-
-		.hero__container
-			.section-title
-				svg.svg-title
-					use(xlink:href="assets/images/icons/sprite.svg#portfolio_header")
-			.user
-				.user__avatar(style="background-image: url(assets/images/avatar.jpg);")
-				.user__info
-					.user__name Сергей Курников
-					.user__desc Личный сайт веб-разработчика
-
-		button.hero__btn
-			svg.hero__btn-icon
-				use(xlink:href="assets/images/icons/sprite.svg#arrow_down")
-	
 	section.about
 		.about__col.about__col_bg-white
 			.works__triangles
@@ -47,14 +17,15 @@ block content
 				.about__title
 					.section-title__about
 						.overlay-svg
-							svg.svg-title__about
-								use(xlink:href="assets/images/icons/sprite.svg#about_header")
-							h2.title Обо мне
+							+icon("about_header", "svg-title__about")
+							//- svg.svg-title__about
+							//- 	use(xlink:href="assets/images/icons/sprite.svg#about_header")
+							h1.title Обо мне
 				.about__desc
 					.user-desc
 						.user-desc__pic(style="background-image: url(assets/images/avatar.jpg);")
 						.user-desc__info
-							h3.title.title--subtitle Кто я
+							h2.title.title--subtitle Кто я
 							.user-desc__text.text-block
 								p.one Я веб разработчик из Новосибирска. Мне 28 лет. 
 								| Я занимаюсь разработкой современных сайтов
@@ -69,8 +40,8 @@ block content
 				svg(fill="#eeebdf", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
 					polygon(points="0,150 900,150 900,0")
 			.about__right-title
-				h3.title.title--subtitle.title--nomargin Чем я могу быть 
-				h3.title--text-down Вам полезен
+				h2.title.title--subtitle.title--nomargin Чем я могу быть 
+				h2.title--text-down Вам полезен
 			.about__small-desc.text-block
 				p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи
 				| на Backend. Но давайте по порядку.
@@ -94,17 +65,16 @@ block content
 			.google-map(id="map")
 			.contacts__container
 				.user-data
-					h3.user-data__title.title.title--subtitle Контакты
+					h2.user-data__title.title.title--subtitle Контакты
 					.user-data__container
-						- var contacts = [['skype', 'kur.ser'], ['mail', 'kur.ser@mail.ru'], ['phone', '+7 920 654 25 25'], ['map_marker', 'г.Новосибирск, ул. Инская, д. 5']]
+						- var contacts = [['skype', 'kur.ser', 'skype:kur.ser'], ['mail', 'kur.ser@mail.ru', 'mailto:kur.ser@mail.ru'], ['phone', '+7 920 654 25 25', 'tel:+7 920 654 25 25'], ['map_marker', 'г.Новосибирск, ул. Инская, д. 5', 'https://www.google.com/maps/@55.5408025,42.2065814,17z?hl=ru-RU']]
 						ul.user-contacts-list
 							each contactsrow in contacts
 								li.user-contacts-list__item
 									.contacts-cell
 										.contacts-cell__icon
-											a(href="#" class=`socials__link_${contactsrow[1]}`).socials__link
-												svg.svg__socials-contact
-													use(xlink:href="assets/images/icons/sprite.svg#"+contactsrow[0])
-										a(href="#" class=`socials__link_${contactsrow[1]}`).contacts-cell__title #{contactsrow[1]}
+											a(href=`${contactsrow[2]}` class=`socials__link_${contactsrow[1]}`).socials__link
+												+icon(`${contactsrow[0]}`, "svg__socials-contact")
+										a(href=`${contactsrow[2]}` class=`socials__link_${contactsrow[1]}`).contacts-cell__title #{contactsrow[1]}
 
 
