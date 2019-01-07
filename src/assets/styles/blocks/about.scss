@@ -69,18 +69,7 @@
 	text-align: center;
 }
 
-.title::before {
-	content: "";
-	display: inline-block;
-	vertical-align: middle;
-	width: 22px;
-	height: 5px;
-	background-color: #373e42;
-	margin: 0 14px;
-	opacity: 0.2;
-}
-
-.title::after {
+.title::before, .title::after {
 	content: "";
 	display: inline-block;
 	vertical-align: middle;
