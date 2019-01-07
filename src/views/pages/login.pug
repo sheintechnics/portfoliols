@@ -1,10 +1,10 @@
 extends ../auth.layout.pug
 block variables
-	-var title = 'Welcome'
+	-var title = 'Авторизация'
 block content
 	.welcome
 		.welcome__container
-			form.login__form.login__form--not-visible
+			form.login__form
 				h3.user-data__title.title.title--subtitle Авторизуйтесь
 				.form-fields
 					.form-field
@@ -35,16 +35,5 @@ block content
 							span На главную
 					.button__form
 						button.button__form-right(type="submit") Войти
-			.user.user--width
-				.user__avatar(style="background-image: url(assets/images/avatar.jpg);")
-				block user__info
-					.user__info
-						.user__name.user__name--color Сергей Курников
-						.user__desc.user__desc--color Личный сайт веб-разработчика
-				.hero__links.hero__links--bottom
-					+socials-green(["vk", "github", "in"], '', ["https://vk.com/id50684213", "https://github.com/SergeyKurnikov", "#"])
-				.links__row
-					+nav("link-welcome", ["Мои работы", "Обо мне", "Блог"], '',["works.html", "about.html", "blog.html"])
 		.copyright.copyright--welcome
 			p © Сергей Курников | создано с любовью в LoftSchool | 2019
-		button.button__login.button__login--position Авторизоваться

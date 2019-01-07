@@ -63,22 +63,22 @@ block content
 						.feedback__name Сабанцев Владимир
 						.feedback__desc преподаватель
 			.container.container--form
-				form.feedback__form
+				form.login__form.login__form--fedback
 					h3.user-data__title.title.title--subtitle Связаться со мной
 					.feedback__form-fields
-						.feedback__form-field
+						.form-field
 							label.label.label-name(for="id-name") Имя
 							input.input.form-name(id="id-name" placeholder="Имя" type="text")
-						.feedback__form-field
+						.form-field
 							label.input.label.label-mail(for="id-mail") Email
 							input.input.form-mail(id="id-mail" placeholder="Email" type="email")
-						.feedback__form-field
+						.form-field
 							label.label.label-text(for="id-text") Ваше сообщение
 							textarea.input.form-text(id="id-text" placeholder="Ваше сообщениe" type="text")
 					.button__row
 						.button__form
-							button.button__form-left(type="submit") Отправить
+							button.button__form-left.button__form-left--color(type="submit") Отправить
 						.button__form
-							button.button__form-right(type="reset") Очистить
+							button.button__form-right.button__form-right--color(type="reset") Очистить
 				button.hero__btn.hero__btn--rotate
 					+icon("arrow_down", "hero__btn-icon")

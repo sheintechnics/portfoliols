@@ -262,23 +262,13 @@
 	width: 380px;
 }
 
-.feedback__form{
-	border-radius: 5px;
+.login__form--fedback{
 	background-color: rgba(218,219,214,.6);
-	overflow: hidden;
-	position: relative;
-	z-index: 1;
 	margin-bottom: 70px;
 }
 
 .label{
 	display: none;	
-}
-
-.feedback__form-field{
-	margin-bottom: 20px;
-	display: flex;
-	justify-content: center;	
 }
 
 .input{
@@ -297,26 +287,15 @@
 
 .form-text{
 	height: 140px;
+	resize: none;
 }
 
 .button__row{
 	display: flex;
 }
 
-.button__form{
-	width: 50%;
-	position: relative;
-}
-
-.button__form-left, .button__form-right{
-	border: none;
-	cursor: pointer;
+.button__form-left--color, .button__form-right--color{
 	background-color: #268b8a;
-	height: 50px;
-	width: 100%;
-	color: #ffffff;
-	font-family: Roboto;
-	transition: .3s;
 }
 
 .button__form-left::before{
@@ -331,7 +310,7 @@
 }
 
 .button__form:hover{
-	.button__form-left, .button__form-right{
+	.button__form-left--color, .button__form-right--color{
 		background-color: #26bbaa;
 	}
 }
