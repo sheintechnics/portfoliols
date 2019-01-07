@@ -11,6 +11,7 @@ const reload = browserSync.reload;
 const $webpack = require("webpack-stream");
 const webpack = require("webpack");
 const del = require("del");
+const ghPages = require('gulp-gh-pages');
 
 // стили
 gulp.task("styles", () => {
@@ -129,6 +130,12 @@ gulp.task("watch", () => {
   gulp.watch(`${config.SRC_DIR}/scripts/**/*.js`, gulp.series("scripts"));
   gulp.watch(`${config.SRC_DIR}/fonts/*`, gulp.series("fonts"));
   gulp.watch(`${config.VIEWS_DIR}/**/*.pug`, gulp.series("pug"));
+});
+
+//GULP:DEPLOY
+gulp.task('deploy', function() {
+  return gulp.src(`${config.DIST_DIR}/**/*`)
+    .pipe(ghPages());
 });
 
 // GULP:DEV
