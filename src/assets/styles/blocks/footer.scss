@@ -95,16 +95,25 @@
 	transform: translate(-50%,-50%);
 }
 
-.socials__item--border:hover {
+.socials__item--border:hover, .socials__item--border:focus {
 	background-color: #fff;
 	position: relative;
 	cursor: pointer;
 	z-index: 0;
 
 }
-.socials__item--border:hover {
+
+.socials__item--border:hover, .socials__item--border:focus {
 	.svg__socials-footer{
 		fill: rgba(#373e42, 0.95);
+		position: relative;
+		z-index: 20;
+	}
+}
+
+.socials__item--border:active {
+	.svg__socials-footer{
+		fill: #26bbaa;
 		position: relative;
 		z-index: 20;
 	}

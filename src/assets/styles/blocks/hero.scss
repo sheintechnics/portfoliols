@@ -34,11 +34,15 @@
 	height: 100%;
 }
 
-.socials__link {
-	&:hover {
-		.socials__link-icon {
-			fill: #fff;
-		}
+.socials__link:hover, .socials__link:focus {
+	.socials__link-icon {
+		fill: #fff;
+	}
+}
+
+.socials__link:active{
+	.socials__link-icon {
+		fill: #26bbaa;
 	}
 }
 

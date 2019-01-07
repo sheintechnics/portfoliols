@@ -9,12 +9,26 @@ mixin socials(socials, modClass, ref)
 	ul.socials(class=`${modClass}`)
 		each item, index in socials
 			li.socials__item
-				a(href=`${ref[index]}` class=`socials__link_${item}`).socials__link
+				a(href=`${ref[index]}` class=`socials__link_${item}` target='blank').socials__link
 					+icon(item, 'socials__link-icon')
+
+mixin socials-round(socials, modClass, ref)
+	ul.socials.socials_rounded(class=`${modClass}`)
+		each item, index in socials
+			li.socials__item--border
+				a(href=`${ref[index]}` class=`socials__link_${item}` target='blank').socials__link
+					+icon(item, 'svg__socials-footer')
+
+mixin socials-green(socials, modClass, ref)
+	ul.socials(class=`${modClass}`)
+		each item, index in socials
+			li.socials__item
+				a(href=`${ref[index]}` class=`socials__link_${item}` target='blank').socials__link
+					+icon(item, ' socials__link-icon socials__link-icon--color')
 
 mixin nav(className, items, activeItem, ref)
 	nav(class=`${className}`)
 		ul(class=`${className}__list`)
 			each item, ndx in items
 				li(class=`${className}__item` + ((ndx === activeItem) ? ` ${className}__item_active` : ''))
-					a(class=`${className}__link` href=`${ref[ndx]}`)= item
+					a(class=`${className}__link` href=`${ref[ndx]}` target='blank')= item
