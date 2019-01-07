@@ -132,7 +132,7 @@ gulp.task("watch", () => {
   gulp.watch(`${config.VIEWS_DIR}/**/*.pug`, gulp.series("pug"));
 });
 
-//GULP:DEPLOY
+// GULP:DEPLOY
 gulp.task('deploy', function() {
   return gulp.src(`${config.DIST_DIR}/**/*`)
     .pipe(ghPages());
