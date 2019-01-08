@@ -107,6 +107,9 @@
 	transform: translate(-50%, -96%);
 	display: flex;	
 	justify-content: center;
+	@include smallphones{
+		font-size: 12px;
+	}
 }
 
 .login__form--not-visible{
