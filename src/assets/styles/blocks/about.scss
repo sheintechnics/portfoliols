@@ -18,6 +18,14 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	@include medtop{
+		flex-direction: column;
+		align-items: center;
+	}
+	@include laptop{
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .works__triangles{
@@ -35,6 +43,16 @@
 	position: relative;
 	margin-right: 27px;
 	width: 50%;
+	@include medtop{
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+		@include laptop{
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
 }
 
 .section-title__about {
@@ -49,7 +67,14 @@
 	width: 357px;
 	margin-right: 27px;
 	margin-top: -30px;
+	@include medtop{
+		margin-right: 0;
+	}
+	@include laptop{
+		margin-right: 0;
+	}
 }
+
 .svg-title__main {
 	width: 357px;
 	height: 125px;
@@ -89,13 +114,19 @@
 	margin-top: 20px;
 	margin-right: 20px;
 	margin-bottom: 40px;
-}
-
-.user-desk {
+	@include medtop{
+		margin-right: 0;
+	}
+	@include laptop{
+		margin-right: 0;
+	}
 }
 
 .user-desc__info {
 	width: 418px;
+	@include medtop{
+		margin: 0 auto;
+	}
 }
 
 .title--subtitle {
@@ -129,16 +160,25 @@
 .about__small-desc {
 	margin-left: 40px;
 	margin-bottom: 56px;
+	@include laptop {
+		margin: 40px 40px;
+	}
 }
 
 .about__info-container {
 	margin-left: 40px;
+	@include laptop {
+		margin: 40px 40px;
+	}
 }
 
 .skills-row__title {
 	color: #455a64;
 	font-family: Roboto;
 	font-size: 28px;
+	@include laptop {
+		font-size: 24px;
+	}
 }
 
 .title--text-down{
@@ -154,6 +194,10 @@
 }
 .skills {
 	margin-bottom: 50px;
+	@include laptop {
+		display: flex;
+		justify-content: center;
+	}
 }
 
 .skill {
@@ -161,11 +205,24 @@
   position: relative;
   width: 200px;
   height: 200px;
+  @include medtop {
+		width: 140px;
+		height: 140px;
+	}
+	@include laptop {
+		width: 140px;
+		height: 140px;
+		margin: 0 auto;
+	}
 }
 
 .skills-row__list {
 	display: flex;
 	margin-bottom: 40px;
+	@include laptop {
+		flex-wrap: wrap;
+		align-content: center;
+	}
 }
 
 .skill__figure {
@@ -180,7 +237,13 @@
 .skill__circle {
   fill: transparent;
   stroke: #ccc;
-  stroke-width: 10px; 
+  stroke-width: 10px;
+  @include medtop{
+		stroke-width: 13px;
+	}
+	@include laptop {
+		stroke-width: 13px;
+	}
 }
 
 .skill__circle_above {
@@ -204,3 +267,14 @@
 	width: 160px;
 	height: 160px;
 }
+
+.skills__item{
+	@include laptop {
+		// text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 120px;
+	}
+}
+

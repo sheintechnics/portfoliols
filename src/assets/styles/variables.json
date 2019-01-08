@@ -6,6 +6,7 @@
   "grey": "#373e42",
   "light-grey": "#dfdcd5",
   "test" : "#000",
+  "medtop": "1800px",
   "laptop": "1200px",
   "tablets": "768px",
   "phones": "480px",

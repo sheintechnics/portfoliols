@@ -1,3 +1,9 @@
+@mixin medtop{
+	@media (min-width: $laptop) and (max-width: $medtop){
+		@content;
+	}
+}
+
 @mixin laptop{
 	@media screen and (max-width: $laptop){
 		@content;
