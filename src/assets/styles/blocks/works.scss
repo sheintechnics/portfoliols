@@ -113,6 +113,24 @@
 	top: 50%; left: 50%;
 	transform: translate(-50%,-50%);
 	z-index: 10;
+	outline: none;
+	&:hover {
+		.arrow {
+			width: 56px;
+			height: 35px;
+			transition: .3s;
+		}
+	}
+	&:focus{
+		.arrow{
+			fill: #00bfa5;
+		}
+	}
+	&:active{
+		.arrow{
+			fill: #268b8a;
+		}
+	}
 }
 
 .btn-slider--up{
@@ -137,11 +155,11 @@
 	opacity: 0.7;
 }
 
-.arrow:hover{
-	width: 56px;
-	height: 35px;
-	transition: .3s;
-}
+// .arrow:hover{
+// 	width: 56px;
+// 	height: 35px;
+// 	transition: .3s;
+// }
 
 .arrow--up{
 	transform: rotate(-180deg);
@@ -295,7 +313,15 @@
 }
 
 .button__form-left--color, .button__form-right--color{
-	background-color: #268b8a;
+	&:hover {
+		background-color: #26bbaa;
+	}
+	&:focus{
+		background-color: #26bbaa;
+	}
+	&:active{
+		color: #268b8a;
+	}
 }
 
 .button__form-left::before{
@@ -309,11 +335,11 @@
 	background-color: rgba(222,227,231,.5);
 }
 
-.button__form:hover{
-	.button__form-left--color, .button__form-right--color{
-		background-color: #26bbaa;
-	}
-}
+// .button__form:hover{
+// 	.button__form-left--color, .button__form-right--color{
+// 		background-color: #26bbaa;
+// 	}
+// }
 
 .hero__btn--rotate{
 	transform: rotate(-180deg);
