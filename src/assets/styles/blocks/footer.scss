@@ -26,11 +26,15 @@
 	font-size: 16px;
 	font-weight: 500;
 	transition: .3s;
-	&:hover {
-			color: #00bfa5;
-			cursor: pointer;
-		}
+	cursor: pointer;
+	&:hover, &:focus {
+		color: #00bfa5;
+			}
+	&:active {
+		color: #268b8a;
+	}
 }
+
 
 .footer__col {
 	width: 50%;

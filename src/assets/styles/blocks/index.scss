@@ -188,10 +188,8 @@
 	transition: .3s;
 }
 
-.button__form:hover{
-	.button__form-left, .button__form-right{
+.button__form-left, .button__form-right{
 		background-color: #268b8a;
-	}
 }
 
 .login__form{
@@ -207,11 +205,13 @@
 	position: relative;
 }
 
-.button__form-left--ref{
+.button__form-left--ref, .button__form-right--ref{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: #26bbaa
 }
+
 
 .button__form-left--ref:hover, .button__form-left--ref:focus {
 	background-color: #058981;
@@ -219,8 +219,18 @@
 
 .button__form-left--ref:active{
 	span{
-		color: #455a64
+		color: #455a64;
 	}
+}
+
+.button__form-right--ref:hover, .button__form-right--ref:focus{
+	background-color: #058981;
+	outline: none;
+}
+
+.button__form-right--ref:active{
+	color: #455a64;
+	outline: none;
 }
 
 .checkbox__form{

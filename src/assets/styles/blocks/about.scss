@@ -147,6 +147,7 @@
 	color: #455a64;
 	font-size: 35px;
 	margin-bottom: 40px;
+	display: block;
 }
 
 .title--nomargin {
@@ -204,3 +205,24 @@
 	width: 160px;
 	height: 160px;
 }
+
+.socials__link-contact:hover, .socials__link-contact:focus{
+	.svg__socials-contact {
+		fill: #455a64;
+	}
+}
+
+.socials__link-contact:active{
+	.svg__socials-contact {
+		fill: darkmagenta;
+	}
+}
+
+.contacts-cell__title:hover, .contacts-cell__title:focus{
+	color: #00bfa5;
+}
+
+.contacts-cell__title:active {
+	color: darkmagenta;
+}
+

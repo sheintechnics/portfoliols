@@ -40,7 +40,7 @@ block content
 					polygon(points="0,150 900,150 900,0")
 			.about__right-title
 				h2.title.title--subtitle.title--nomargin Чем я могу быть 
-				h2.title--text-down Вам полезен
+				span.title--text-down Вам полезен
 			.about__small-desc.text-block
 				p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи
 				| на Backend. Но давайте по порядку.
@@ -72,7 +72,7 @@ block content
 								li.user-contacts-list__item
 									.contacts-cell
 										.contacts-cell__icon
-											a(href=`${contactsrow[2]}` class=`socials__link_${contactsrow[1]}`).socials__link
+											a(href=`${contactsrow[2]}` class=`socials__link_${contactsrow[1]}`).socials__link-contact
 												+icon(`${contactsrow[0]}`, "svg__socials-contact")
 										a(href=`${contactsrow[2]}` class=`socials__link_${contactsrow[1]}`).contacts-cell__title #{contactsrow[1]}
 
