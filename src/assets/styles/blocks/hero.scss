@@ -93,6 +93,9 @@
 	width: 1176px;
 	height: 313px;
 	opacity: 0.06;
+	@include laptop{
+		width: 100%;
+	}
 }
 
 .hero__container {
