@@ -171,9 +171,9 @@
 	margin: auto;
 	position: relative;
 	z-index: 10;
+	cursor: pointer;
 	&:hover{
 		.hero__btn-icon {
-			cursor: pointer;
 			width: 34px;
 			height: 19px;
 			transition: .3s;
@@ -189,6 +189,9 @@
 		.hero__btn-icon{
 			fill: #268b8a;
 		}
+	}
+	@include tablets{
+		cursor: none;
 	}
 }
 

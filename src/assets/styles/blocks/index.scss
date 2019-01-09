@@ -71,10 +71,16 @@
 	width: 127px;
 	position: relative;
 	transition: .3s;
+	@include tablets{
+		cursor: none;
+	}
 }
 
 .link-welcome__link{
 	color: #fff;
+	@include tablets{
+		cursor: none;
+	}
 }
 
 .link-welcome__item:not(:last-child)::after{
@@ -131,6 +137,9 @@
 	color: #fff;
 	font-family: Roboto;
 	border-radius: 5px;
+	@include tablets{
+		cursor: none;
+	}
 }
 
 .button__login--position{
@@ -192,7 +201,10 @@
 }
 
 .button__form-left, .button__form-right{
-		background-color: #268b8a;
+	background-color: #268b8a;
+	@include tablets{
+		cursor: none;
+	}
 }
 
 .login__form{
