@@ -1,0 +1,84 @@
+extends ../main.layout.pug
+
+block variables
+	- var title = 'Мои работы'
+	- var number = 0
+
+block scripts
+
+block content
+	main.works
+		.works__triangles
+			svg(fill="#faf8f0", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
+				polygon(points="0,0 0,150 900,150")
+			svg(fill="#faf8f0", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
+				polygon(points="0,150 900,150 900,0")
+		.works__title
+			.overlay-svg
+				+icon("works_header", "svg-title__main svg-title__main--size")
+				h1.title.title--width Мои работы
+		.works__row
+			.about__col.about__col_bg-white.about__col--center
+				h2.title.title--subtitle.title--nomargin Сайт школы онлайн
+				h2.title--text-down образования
+				.desc Html, CSS, JavaScript
+				a(class="link__ls" href="https://loftschool.com/" target="_blank")
+					.link__ls-image
+						+icon('link', 'link')
+					.link__ls-text Посмотреть сайт
+			.about__col.about__col_bg-beige
+				.main__work
+					+image('work-1.png', 'Первая группа работ', 'work-image')
+				.add-work__row
+					.add-work__col.add-work__col--left
+						+image('work-2.png', 'Вторая группа работ', 'work-image__row')
+						button.btn-slider.btn-slider--up
+							+icon("arrow_down", "arrow")
+					.add-work__col.add-work__col--right
+						+image('work-3.png', 'Третья группа работ', 'work-image__row')
+						button.btn-slider.btn-slider--down
+							+icon("arrow_down", "arrow arrow--up")
+		section.feedback
+			.about__title.about__title--feedback
+				.overlay-svg.overlay-svg--nomargin
+					+icon("about_header", "svg-title__main svg-title__main--width")
+					h2.title.title--up Что обо мне
+					span.title--text-down.title--visual говорят
+			.feedback-row__up
+				.feedback__col-up.feedback__col-up--left
+					+icon("quotation-marks", "svg-marks")
+					p.feedback__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+				.feedback__col-up
+					+icon("quotation-marks", "svg-marks")
+					p.feedback__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+			.feedback-row__down
+				.feedback__col-down.feedback__col-down-margin
+					.feedback__avatar(style="background-image: url(assets/images/avatar-1.png);")
+					.feedback__info
+						.feedback__name Ковальчук Дмитрий
+						.feedback__desc основатель LoftSchool
+				.feedback__col-down
+					.feedback__avatar(style="background-image: url(assets/images/avatar-2.png);")
+					.feedback__info
+						.feedback__name Сабанцев Владимир
+						.feedback__desc преподаватель
+			.container.container--form
+				form.login__form.login__form--fedback
+					h3.user-data__title.title.title--subtitle Связаться со мной
+					.feedback__form-fields
+						.form-field
+							label.label.label-name(for="id-name") Имя
+							input.input.form-name(id="id-name" placeholder="Имя" type="text")
+						.form-field
+							label.input.label.label-mail(for="id-mail") Email
+							input.input.form-mail(id="id-mail" placeholder="Email" type="email")
+						.form-field
+							label.label.label-text(for="id-text") Ваше сообщение
+							textarea.input.form-text(id="id-text" placeholder="Ваше сообщениe" type="text")
+					.button__row
+						.button__form
+							button.button__form-left.button__form-left--color(type="submit") Отправить
+						.button__form
+							button.button__form-right.button__form-right--color(type="reset") Очистить
+				button.hero__btn.hero__btn--rotate
+					+icon("arrow_down", "hero__btn-icon")

@@ -1,0 +1,76 @@
+.hamburger-menu{
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: rgba(32, 181, 161, 0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: opacity .3s;
+  height: 100vh;
+  &.is-active{
+    display: flex;
+    opacity: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 20;
+  }
+}
+
+@keyframes pulse{
+  from{
+    transform: scale3d(1, 1, 1);
+  }
+
+  50%{
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to{
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse, .pulse:after{
+  animation: pulse 1s;
+}
+
+.burger-menu__list{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.burger-menu__item{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.burger-menu__link{
+  font-family: 'bernier';
+  color: #fff;
+  font-size: 63px;
+  letter-spacing: 1.57px;
+  width: 100%;
+  margin-bottom: 46px;
+  &:hover{
+    text-decoration: underline
+  }
+}
+
+.burger-menu__link::before, .burger-menu__link::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 22px;
+  height: 5px;
+  background-color: #fff;
+  margin: 0 14px;
+  opacity: 0.2;
+}
