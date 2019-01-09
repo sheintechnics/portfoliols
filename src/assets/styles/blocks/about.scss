@@ -2,10 +2,17 @@
 	position: relative;
 	display: flex;
 	bottom: 200px;
+	@include tablets{
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .about__col{
 	width: 50%;
+	@include tablets{
+		width: 100%;	
+	}
 }
 .about__col_bg-white{
 	background-color:#efeee9;
@@ -33,11 +40,18 @@
 	margin-top: -150px;
 	position: relative;
 	display: flex;
+}
+
+.works__triangles--scale{
+	@include tablets{
+		transform: scale(-1,1);	
 	}
+}
+
 .triangle{
 	height: 150px;
 	width: 100%;
-	}
+}
 
 .about__title {
 	position: relative;
@@ -60,6 +74,10 @@
 	text-align: right;
 	display: flex;
 	justify-content: flex-end;
+	@include tablets{
+		width: 100%;
+		justify-content: center;	
+	}
 }
 
 .overlay-svg {
@@ -81,6 +99,9 @@
 	fill: #373e42;
 	opacity: 0.04;
 	position: relative;
+	// @include tablets{
+	// 	width: 100%;
+	// }
 }
 
 .title {
@@ -92,6 +113,9 @@
 	left: 50%; top: 50%;
 	transform: translate(-50%,-50%);
 	text-align: center;
+	// @include tablets{
+	// 	font-size: 24px	
+	// }
 }
 
 .title::before, .title::after {
@@ -103,6 +127,15 @@
 	background-color: #373e42;
 	margin: 0 14px;
 	opacity: 0.2;
+}
+
+.user-desc{
+	@include laptop{
+		display: flex;
+		flex-direction: column;	
+		justify-content: center;
+		align-items: center;	
+	}
 }
 
 .user-desc__pic {
@@ -119,6 +152,10 @@
 	}
 	@include laptop{
 		margin-right: 0;
+		width: 360px;	
+	}
+	@include smallphones{
+		width: 400px;	
 	}
 }
 
@@ -126,6 +163,12 @@
 	width: 418px;
 	@include medtop{
 		margin: 0 auto;
+	}
+	@include laptop{
+		width: 380px		
+	}
+	@include smallphones{
+		width: 90%;		
 	}
 }
 
@@ -141,10 +184,13 @@
 	font-family: Roboto;
 	font-size: 16px;
 	line-height: 24px;
+	@include tablets{
+		margin-bottom: 170px;			
+	}
 }
 
+
 .one {
-	
 	white-space: pre-line;
 }
 
@@ -153,22 +199,21 @@
 	white-space: pre-line;
 }
 
-.about__col.about__col_bg-beige {
-	width: 50%;
-}
-
 .about__small-desc {
 	margin-left: 40px;
 	margin-bottom: 56px;
 	@include laptop {
 		margin: 40px 40px;
 	}
+	@include phones {
+		margin: 40px 20px;
+	}
 }
 
 .about__info-container {
 	margin-left: 40px;
 	@include laptop {
-		margin: 40px 40px;
+		margin: 40px 20px;
 	}
 }
 
@@ -197,7 +242,7 @@
 	margin-bottom: 50px;
 	@include laptop {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 	}
 }
 

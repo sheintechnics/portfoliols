@@ -38,6 +38,9 @@
 	.socials__link-icon {
 		fill: #fff;
 	}
+	@include tablets{
+		cursor: none;
+	}
 }
 
 .socials__link:active{
@@ -54,9 +57,9 @@
 	justify-content: center;
 	background-color: transparent;
 	outline: none;
+	cursor: pointer;
 	&:hover {
 		.svg__hamburger {
-			cursor: pointer;
 			width: 52px;
 			height: 39px;
 			transition: .3s;
@@ -72,6 +75,9 @@
 		.svg__hamburger{
 			fill: #268b8a
 		}
+	}
+	@include tablets{
+		cursor: none;
 	}
 }
 
@@ -147,6 +153,9 @@
 
 .hero__container {
 	margin-bottom: 82px;
+	@include tablets{
+		margin-bottom: 0px;
+	}
 }
 
 
