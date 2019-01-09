@@ -73,9 +73,8 @@
 						</div>
 					</div>
 					<div class="works__row">
-						<div class="about__col about__col_bg-white about__col--center">
-							<h2 class="title title--subtitle title--nomargin">Сайт школы онлайн</h2>
-							<h2 class="title--text-down">образования</h2>
+						<div class="about__col about__col_bg-white about__col--center works__col">
+							<h2 class="title title--subtitle title--nomargin">Сайт школы онлайн</h2><span class="title--text-down">образования</span>
 							<div class="desc">Html, CSS, JavaScript</div><a class="link__ls" href="https://loftschool.com/" target="_blank">
 								<div class="link__ls-image">
 									<svg class="link">
@@ -114,33 +113,31 @@
 								<h2 class="title title--up">Что обо мне</h2><span class="title--text-down title--visual">говорят</span>
 							</div>
 						</div>
-						<div class="feedback-row__up">
-							<div class="feedback__col-up feedback__col-up--left">
+						<div class="feedback__col-overlay">
+							<div class="feedback__col feedback__col--right">
 								<svg class="svg-marks">
 									<use xlink:href="assets/images/icons/sprite.svg#quotation-marks"></use>
 								</svg>
 								<p class="feedback__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
+								<div class="feedback__user">
+									<div class="feedback__avatar" style="background-image: url(assets/images/avatar-1.png);"></div>
+									<div class="feedback__info">
+										<div class="feedback__name">Ковальчук Дмитрий</div>
+										<div class="feedback__desc">основатель LoftSchool</div>
+									</div>
+								</div>
 							</div>
-							<div class="feedback__col-up">
+							<div class="feedback__col">
 								<svg class="svg-marks">
 									<use xlink:href="assets/images/icons/sprite.svg#quotation-marks"></use>
 								</svg>
 								<p class="feedback__text">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</p>
-							</div>
-						</div>
-						<div class="feedback-row__down">
-							<div class="feedback__col-down feedback__col-down-margin">
-								<div class="feedback__avatar" style="background-image: url(assets/images/avatar-1.png);"></div>
-								<div class="feedback__info">
-									<div class="feedback__name">Ковальчук Дмитрий</div>
-									<div class="feedback__desc">основатель LoftSchool</div>
-								</div>
-							</div>
-							<div class="feedback__col-down">
-								<div class="feedback__avatar" style="background-image: url(assets/images/avatar-2.png);"></div>
-								<div class="feedback__info">
-									<div class="feedback__name">Сабанцев Владимир</div>
-									<div class="feedback__desc">преподаватель</div>
+								<div class="feedback__user">
+									<div class="feedback__avatar" style="background-image: url(assets/images/avatar-2.png);"></div>
+									<div class="feedback__info">
+										<div class="feedback__name">Сабанцев Владимир</div>
+										<div class="feedback__desc">преподаватель</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -180,7 +177,7 @@
 				</main>
 				<footer class="footer">
 					<div class="footer__row footer__row_border_bottom">
-						<div class="footer__col">
+						<div class="footer__col footer__col--70">
 							<nav class="menu">
 								<ul class="menu__list">
 									<li class="menu__item menu__item_active"><a class="menu__link" href="works.html">Мои работы</a></li>
@@ -190,7 +187,7 @@
 								</ul>
 							</nav>
 						</div>
-						<div class="footer__col footer__col_justify_right">
+						<div class="footer__col footer__col_justify_right footer__col--none2">
 							<ul class="socials socials_rounded">
 								<li class="socials__item--border"><a class="socials__link_vk socials__link" href="https://vk.com/id50684213" target="_blank">
 										<svg class="svg__socials-footer">
@@ -207,14 +204,14 @@
 							</ul>
 						</div>
 					</div>
-					<div class="footer__row">
-						<div class="footer__col">
+					<div class="footer__row footer__row--tablets">
+						<div class="footer__col footer__col--none">
 							<div class="copyright">
 								<p>Я веб-разработчик из Навашино, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </p>
 							</div>
 						</div>
-						<div class="footer__col footer__col_justify_right">
-							<div class="copyright">
+						<div class="footer__col footer__col_justify_right footer__col--100">
+							<div class="copyright copyright--right">
 								<p>© Сергей Курников | создано с любовью в LoftSchool | 2019</p>
 							</div>
 						</div>
