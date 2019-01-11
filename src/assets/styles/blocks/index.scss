@@ -71,16 +71,10 @@
 	width: 127px;
 	position: relative;
 	transition: .3s;
-	@include tablets{
-		cursor: none;
-	}
 }
 
 .link-welcome__link{
 	color: #fff;
-	@include tablets{
-		cursor: none;
-	}
 }
 
 .link-welcome__item:not(:last-child)::after{
