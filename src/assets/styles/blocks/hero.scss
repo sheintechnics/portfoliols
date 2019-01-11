@@ -39,7 +39,6 @@
 		fill: #fff;
 	}
 	@include tablets{
-		cursor: none;
 	}
 }
 
@@ -75,9 +74,6 @@
 		.svg__hamburger{
 			fill: #268b8a
 		}
-	}
-	@include tablets{
-		cursor: none;
 	}
 }
 
@@ -189,9 +185,6 @@
 		.hero__btn-icon{
 			fill: #268b8a;
 		}
-	}
-	@include tablets{
-		cursor: none;
 	}
 }
 

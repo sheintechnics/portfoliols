@@ -1,6 +1,6 @@
 .works{
 	position: relative;
-	bottom: 200px;
+	bottom: 170px;
 }
 
 .works__row{
@@ -64,9 +64,6 @@
 	border-radius: 5px;
 	color: #fff;
 	cursor: pointer;
-	@include tablets{
-		cursor: none;
-	}
 }
 
 .link__ls:hover, .link__ls:focus{
@@ -164,9 +161,6 @@
 		.arrow{
 			fill: #268b8a;
 		}
-	}
-	@include tablets{
-		cursor: none;
 	}
 }
 

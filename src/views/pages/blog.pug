@@ -24,8 +24,9 @@ block content
 			svg(fill="#eeebdf", viewbox="0 0 900 150", class="triangle works__triangles--white", preserveAspectRatio="none")
 				polygon(points="0,150 900,150 900,0")
 		.articles
-			aside.sidebar
+			aside.sidebar.sidebar--open
 				+nav('menu-vertical', ['Самое важное в SASS', 'Приёмы в вёрстке, без которых не обходится ни один сайт', 'Самый необхожимый набор Gulp плагинов', 'Почему я выбрал Pug'], 0, ['#', '#', '#', '#'])
+				button.left-menu
 			.overlay
 				.text
 					h2.text__title Самое важное в SASS

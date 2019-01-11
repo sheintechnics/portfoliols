@@ -10,69 +10,69 @@ block scripts
 	//- script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACbB1zw85rUBsteWgJMzTUtG7nGKfkoxw")
 block content
 	main.about
-		.about__col.about__col_bg-white
-			.works__triangles
-				svg(fill="#efeee9", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
-					polygon(points="0,0 0,150 900,150")
-			.about__user
-				.about__title
-					.section-title__about
-						.overlay-svg
-							+icon("about_header", "svg-title__main")
-							h1.title Обо мне
-				.about__desc
-					.user-desc
-						.user-desc__pic(style="background-image: url(assets/images/avatar.jpg);")
-						.user-desc__info
-							h2.title.title--subtitle Кто я
-							.user-desc__text.text-block
-								p.one Я веб разработчик из Новосибирска. Мне 28 лет. 
-								| Я занимаюсь разработкой современных сайтов
-								| и приложений. Мне нравится делать интересные 
-								| и современные проекты.
-								p.two Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-								| Чуть позже я освежу в нём
-								| свой контент. А пока посмотрите, как тут всё 
-								| классно и красиво!
-		.about__col.about__col_bg-beige
-			.works__triangles.works__triangles--scale
-				svg(fill="#eeebdf", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
-					polygon(points="0,150 900,150 900,0")
-			.about__right-title
-				h2.title.title--subtitle.title--nomargin Чем я могу быть 
-				span.title--text-down Вам полезен
-			.about__small-desc.text-block
-				p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-			.about__info-container
-				- var skills = [['Frontend', [['HTML5', 230], ['CSS3', 230], ['JS & jQuery', 180]]],['Backend', [['PHP',150], ['mySQL',150], ['Node.js & npm',180], ['Mongo.db',180]]],['Workflow', [['Git',220], ['Gulp',200], ['Bower',200]]]]
-				ul.skills
-					each skillsrow in skills
-						li.skills__item.skills-row
-							.skills-row__title #{skillsrow[0]}
-							ul.skills-row__list
-								each skill in skillsrow[1]
-									li.skills-row__item
-										.skill
-											.skill__circle
-												svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
-													circle(cx="50" cy="50" r="30").skill__circle.skill__circle_under
-													circle(cx="50" cy="50" r="30" style="stroke-dasharray:"+skill[1]).skill__circle.skill__circle_above
-												.skill__title #{skill[0]}	
-	section.contacts
-		.contacts__overlay
-			.google-map(id="map")
-			.contacts__container
-				.user-data
-					h2.user-data__title.title.title--subtitle Контакты
-					.user-data__container
-						- var contacts = [['skype', 'kur.ser', 'skype:kur.ser'], ['mail', 'kur.ser@mail.ru', 'mailto:kur.ser@mail.ru'], ['phone', '+7 920 654 25 25', 'tel:+7 920 654 25 25'], ['map_marker', 'г.Новосибирск, ул. Инская, д. 5', 'https://www.google.com/maps/@55.5408025,42.2065814,17z?hl=ru-RU']]
-						ul.user-contacts-list
-							each contactsrow in contacts
-								li.user-contacts-list__item
-									.contacts-cell
-										.contacts-cell__icon
-											a(href=`${contactsrow[2]}` class=`socials__link_${contactsrow[1]}`).socials__link-contact
-												+icon(`${contactsrow[0]}`, "svg__socials-contact")
-										a(href=`${contactsrow[2]}` class=`socials__link_${contactsrow[1]}`).contacts-cell__title #{contactsrow[1]}
+		.works__triangles
+			svg(fill="#efeee9", viewbox="0 0 900 150", class="triangle", preserveAspectRatio="none")
+				polygon(points="0,0 0,150 900,150")
+			svg(fill="#eeebdf", viewbox="0 0 900 150", class="triangle triangle--fill", preserveAspectRatio="none")
+				polygon(points="0,150 900,150 900,0")
+		.col-overlay
+			.about__col.about__col_bg-white
+				.about__user
+					.about__title
+						.section-title__about
+							.overlay-svg
+								+icon("about_header", "svg-title__main")
+								h1.title Обо мне
+					.about__desc
+						.user-desc
+							.user-desc__pic(style="background-image: url(assets/images/avatar.jpg);")
+							.user-desc__info
+								h2.title.title--subtitle Кто я
+								.user-desc__text.text-block
+									p.one Я веб разработчик из Новосибирска. Мне 28 лет. 
+									| Я занимаюсь разработкой современных сайтов
+									| и приложений. Мне нравится делать интересные 
+									| и современные проекты.
+									p.two Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+									| Чуть позже я освежу в нём
+									| свой контент. А пока посмотрите, как тут всё 
+									| классно и красиво!
+			.about__col.about__col_bg-beige
+				.about__right-title
+					h2.title.title--subtitle.title--nomargin Чем я могу быть 
+					span.title--text-down Вам полезен
+				.about__small-desc.text-block
+					p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+				.about__info-container
+					- var skills = [['Frontend', [['HTML5', 230], ['CSS3', 230], ['JS & jQuery', 180]]],['Backend', [['PHP',150], ['mySQL',150], ['Node.js & npm',180], ['Mongo.db',180]]],['Workflow', [['Git',220], ['Gulp',200], ['Bower',200]]]]
+					ul.skills
+						each skillsrow in skills
+							li.skills__item.skills-row
+								.skills-row__title #{skillsrow[0]}
+								ul.skills-row__list
+									each skill in skillsrow[1]
+										li.skills-row__item
+											.skill
+												.skill__circle
+													svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+														circle(cx="50" cy="50" r="30").skill__circle.skill__circle_under
+														circle(cx="50" cy="50" r="30" style="stroke-dasharray:"+skill[1]).skill__circle.skill__circle_above
+													.skill__title #{skill[0]}	
+		section.contacts
+			.contacts__overlay
+				.google-map(id="map")
+				.contacts__container
+					.user-data
+						h2.user-data__title.title.title--subtitle Контакты
+						.user-data__container
+							- var contacts = [['skype', 'kur.ser', 'skype:kur.ser'], ['mail', 'kur.ser@mail.ru', 'mailto:kur.ser@mail.ru'], ['phone', '+7 920 654 25 25', 'tel:+7 920 654 25 25'], ['map_marker', 'г.Новосибирск, ул. Инская, д. 5', 'https://www.google.com/maps/@55.5408025,42.2065814,17z?hl=ru-RU']]
+							ul.user-contacts-list
+								each contactsrow in contacts
+									li.user-contacts-list__item
+										.contacts-cell
+											.contacts-cell__icon
+												a(href=`${contactsrow[2]}` class=`socials__link_${contactsrow[1]}`).socials__link-contact
+													+icon(`${contactsrow[0]}`, "svg__socials-contact")
+											a(href=`${contactsrow[2]}` class=`socials__link_${contactsrow[1]}`).contacts-cell__title #{contactsrow[1]}
 
 

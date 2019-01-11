@@ -60,8 +60,7 @@
 		color: #268b8a;
 	}
 	@include tablets{
-		font-size: 14px;
-		cursor: none;
+		font-size: 13.5px;
 	}
 }
 
@@ -155,7 +154,7 @@
 		// font-size: 12px;			
 	}
 	@include phones{
-		font-size: 12px;
+		font-size: 16px;
 	}
 	@include smallphones{
 		font-size: 12px;
@@ -182,9 +181,6 @@
 	margin-left: 18px;
 	transition: .3s;
 	cursor: pointer;
-	@include tablets{
-		cursor: none;
-	}	
 }
 
 .svg__socials-footer {
@@ -209,9 +205,6 @@
 		fill: rgba(#373e42, 0.95);
 		position: relative;
 		z-index: 20;
-		@include tablets{
-			cursor: none;
-		}	
 	}
 }
 
