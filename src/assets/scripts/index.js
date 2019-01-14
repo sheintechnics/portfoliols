@@ -1,1 +1,1 @@
-import "./modules/parallacsMouse.js";
+import "./modules/parallaxMouse.js";
