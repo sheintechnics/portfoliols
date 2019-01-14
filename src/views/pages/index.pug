@@ -1,8 +1,23 @@
-extends ../auth.layout.pug
+extends ../index.layout.pug
 block variables
 	-var title = 'Welcome'
 block content
 	.welcome
+		.parallax
+			.prallax__layer
+				+image("layer100.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer200.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer300.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer400.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer500.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer800.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer900.png", "", "parallax__image")
 		.welcome__container
 			form.login__form.login__form--not-visible
 				h3.user-data__title.title.title--subtitle Авторизуйтесь
