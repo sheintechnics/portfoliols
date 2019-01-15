@@ -40,6 +40,8 @@ block content
 						button.btn-slider.btn-slider--down
 							+icon("arrow_down", "arrow arrow--up")
 		section.feedback
+			.feedback__bg
+				+image('bg.png', '', 'feedback-img')
 			.about__title.about__title--feedback
 				.overlay-svg.overlay-svg--nomargin
 					+icon("about_header", "svg-title__main svg-title__main--width")
@@ -61,24 +63,26 @@ block content
 						.feedback__avatar(style="background-image: url(assets/images/avatar-2.png);")
 						.feedback__info
 							.feedback__name Сабанцев Владимир
-							.feedback__desc преподаватель
+							.feedback__desc преподаватель		
 			.container.container--form
-				form.login__form.login__form--fedback
-					h3.user-data__title.title.title--subtitle Связаться со мной
-					.feedback__form-fields
-						.form-field
-							label.label.label-name(for="id-name") Имя
-							input.input.form-name(id="id-name" placeholder="Имя" type="text")
-						.form-field
-							label.input.label.label-mail(for="id-mail") Email
-							input.input.form-mail(id="id-mail" placeholder="Email" type="email")
-						.form-field
-							label.label.label-text(for="id-text") Ваше сообщение
-							textarea.input.form-text(id="id-text" placeholder="Ваше сообщениe" type="text")
-					.button__row
-						.button__form
-							button.button__form-left.button__form-left--color(type="submit") Отправить
-						.button__form
-							button.button__form-right.button__form-right--color(type="reset") Очистить
-				button.hero__btn.hero__btn--rotate
-					+icon("arrow_down", "hero__btn-icon")
+				.form-blur
+				.form-wrapper
+					form.login__form.login__form--fedback
+						h3.user-data__title.title.title--subtitle Связаться со мной
+						.feedback__form-fields
+							.form-field
+								label.label.label-name(for="id-name") Имя
+								input.input.form-name(id="id-name" placeholder="Имя" type="text")
+							.form-field
+								label.input.label.label-mail(for="id-mail") Email
+								input.input.form-mail(id="id-mail" placeholder="Email" type="email")
+							.form-field
+								label.label.label-text(for="id-text") Ваше сообщение
+								textarea.input.form-text(id="id-text" placeholder="Ваше сообщениe" type="text")
+						.button__row
+							.button__form
+								button.button__form-left.button__form-left--color(type="submit") Отправить
+							.button__form
+								button.button__form-right.button__form-right--color(type="reset") Очистить
+			button.hero__btn.hero__btn--rotate
+				+icon("arrow_down", "hero__btn-icon")

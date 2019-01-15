@@ -5,7 +5,7 @@ var parallax = (function () {
 
 	 return{
 	 	move: function (block, windowScroll, strafeAmount) {
-	 		var strafe = windowScroll / -strafeAmount + '%';
+	 		var strafe = windowScroll / strafeAmount + '%';
 	 		var style = block.style;
 	 		var transformString = 'translate3d(0,' + strafe +', 0)';
 
