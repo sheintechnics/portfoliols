@@ -1,6 +1,18 @@
 .works{
 	position: relative;
-	bottom: 200px;
+	bottom: 170px;
+}
+
+.works__row{
+	@include tablets{
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+}
+
+.works__col{
+	padding: 40px 0;	
 }
 
 .works__title{
@@ -27,7 +39,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 834px;
 }
 
 .desc {
@@ -92,18 +103,38 @@
 }
 .add-work__row{
 	display: flex;
-	height: 37%;
+	width: 100%;	
 	position: relative;
 }
 
 .add-work__col{
 	width: 50%;
+	// height: 91%;
 	position: relative;
+	float: left;
+	// @include medtop{
+	// 	// width: 80%;
+	// 	height: 80%;			
+	// }
+	// @include laptop{
+	// 	// width: 100%;
+	// 	height: 80%;			
+	// }
 }
 
 .work-image__row{
 	width: 100%;
 	height: 100%;
+	// @include medtop{
+	// 	width: 80%;
+	// 	height: 80%;	
+	// }
+}
+
+.work-image{
+	@include laptop{
+		width: 80%;
+	}
 }
 
 .btn-slider{
@@ -184,15 +215,9 @@
 	margin-bottom: -200px;
 	display: flex;
 	flex-direction: column;
-	// text-align: center;
-}
-
-.feedback-overlay{
-	display: flex;
-	justify-content: center;
-}
-
-.about__title--feedback {
+	@include tablets{
+		height: 1000px;
+	}
 }
 
 .overlay-svg--nomargin{
@@ -204,6 +229,9 @@
 .about__title--feedback{
 	width: 100%;
 	position: relative;
+	@include tablets{
+		display: none;
+	}
 }
 
 .title--visual{
@@ -219,29 +247,27 @@
 	height: 175px;
 }
 
-.feedback-row__up, .feedback-row__down{
+.feedback__col-overlay{
 	display: flex;
-	justify-content: center
+	margin-bottom: 60px;
+	justify-content: center;
+	@include tablets{
+		display: none;	
+	}
 }
 
-.feedback-row__up{
-	margin-bottom: 25px;
+.feedback__col{
+	// @include tablets{
+	// 	width: 100%;	
+	// }
 }
 
-
-.feedback__col-up--left{
+.feedback__col--right{
 	margin-right: 37px;
-}
-
-.feedback__col-down{
-	width: 370px;
-	display: flex;
-	align-items: center;
-	margin-bottom: 70px;	
-}
-
-.feedback__col-down-margin {
-	margin-right: 37px;
+	@include tablets{
+		margin-right: 0;
+		margin-bottom: 37px;
+	}
 }
 .svg-marks{
 	opacity: 0.2;
@@ -251,10 +277,16 @@
 	margin-bottom: 15px;
 }
 
+.feedback__user{
+	display: flex;
+	align-items: center;
+}
+
 .feedback__text{
 	width: 370px;
 	line-height: 26px;
 	text-align: left;
+	margin-bottom: 27px;
 }
 
 .feedback__avatar{
@@ -278,6 +310,9 @@
 
 .container--form{
 	width: 380px;
+	@include tablets{
+		margin-top: 200px;
+	}
 }
 
 .login__form--fedback{

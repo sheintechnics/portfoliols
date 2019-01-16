@@ -1,11 +1,23 @@
 .about {
 	position: relative;
 	display: flex;
-	bottom: 200px;
+	flex-direction: column;
+	bottom: 170px;
+}
+
+.col-overlay{
+	display: flex;
+	@include tablets{
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .about__col{
 	width: 50%;
+	@include tablets{
+		width: 100%;	
+	}
 }
 .about__col_bg-white{
 	background-color:#efeee9;
@@ -14,10 +26,19 @@
 	background-color:#eeebdf;
 }
 
+
 .about__user {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	@include medtop{
+		flex-direction: column;
+		align-items: center;
+	}
+	@include laptop{
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .works__triangles{
@@ -25,16 +46,36 @@
 	margin-top: -150px;
 	position: relative;
 	display: flex;
+	@include tablets{
+		// display: none;
 	}
+}
+
 .triangle{
 	height: 150px;
 	width: 100%;
+}
+
+.triangle--fill{
+	@include tablets{
+		fill: #efeee9;
 	}
+}
 
 .about__title {
 	position: relative;
 	margin-right: 27px;
 	width: 50%;
+	@include medtop{
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+	@include laptop{
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
 }
 
 .section-title__about {
@@ -42,6 +83,11 @@
 	text-align: right;
 	display: flex;
 	justify-content: flex-end;
+	@include tablets{
+		width: 100%;
+		justify-content: center;	
+		margin-top: 40px;
+	}
 }
 
 .overlay-svg {
@@ -49,13 +95,23 @@
 	width: 357px;
 	margin-right: 27px;
 	margin-top: -30px;
+	@include medtop{
+		margin-right: 0;
+	}
+	@include laptop{
+		margin-right: 0;
+	}
 }
+
 .svg-title__main {
 	width: 357px;
 	height: 125px;
 	fill: #373e42;
 	opacity: 0.04;
 	position: relative;
+	// @include tablets{
+	// 	width: 100%;
+	// }
 }
 
 .title {
@@ -67,6 +123,9 @@
 	left: 50%; top: 50%;
 	transform: translate(-50%,-50%);
 	text-align: center;
+	// @include tablets{
+	// 	font-size: 24px	
+	// }
 }
 
 .title::before, .title::after {
@@ -80,6 +139,15 @@
 	opacity: 0.2;
 }
 
+.user-desc{
+	@include laptop{
+		display: flex;
+		flex-direction: column;	
+		justify-content: center;
+		align-items: center;	
+	}
+}
+
 .user-desc__pic {
 	width: 443px;
 	height: 390px;
@@ -89,13 +157,29 @@
 	margin-top: 20px;
 	margin-right: 20px;
 	margin-bottom: 40px;
-}
-
-.user-desk {
+	@include medtop{
+		margin-right: 0;
+	}
+	@include laptop{
+		margin-right: 0;
+		width: 360px;	
+	}
+	@include smallphones{
+		width: 400px;	
+	}
 }
 
 .user-desc__info {
 	width: 418px;
+	@include medtop{
+		margin: 0 auto;
+	}
+	@include laptop{
+		width: 380px		
+	}
+	@include smallphones{
+		width: 90%;		
+	}
 }
 
 .title--subtitle {
@@ -104,16 +188,22 @@
 	font-size: 35px;
 	transform: translate(0,0);
 	margin-bottom: 40px;
+	@include tablets{
+		margin-top: 40px;		
+	}
 }
 .text-block {
 	color: #455a64;
 	font-family: Roboto;
 	font-size: 16px;
 	line-height: 24px;
+	@include tablets{
+		margin-bottom: 170px;		
+	}
 }
 
+
 .one {
-	
 	white-space: pre-line;
 }
 
@@ -122,23 +212,31 @@
 	white-space: pre-line;
 }
 
-.about__col.about__col_bg-beige {
-	width: 50%;
-}
-
 .about__small-desc {
 	margin-left: 40px;
 	margin-bottom: 56px;
+	@include laptop {
+		margin: 40px 40px;
+	}
+	@include phones {
+		margin: 40px 20px;
+	}
 }
 
 .about__info-container {
 	margin-left: 40px;
+	@include laptop {
+		margin: 40px 20px;
+	}
 }
 
 .skills-row__title {
 	color: #455a64;
 	font-family: Roboto;
 	font-size: 28px;
+	@include laptop {
+		font-size: 24px;
+	}
 }
 
 .title--text-down{
@@ -155,6 +253,10 @@
 }
 .skills {
 	margin-bottom: 50px;
+	@include laptop {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 .skill {
@@ -162,11 +264,24 @@
   position: relative;
   width: 200px;
   height: 200px;
+  @include medtop {
+		width: 140px;
+		height: 140px;
+	}
+	@include laptop {
+		width: 140px;
+		height: 140px;
+		margin: 0 auto;
+	}
 }
 
 .skills-row__list {
 	display: flex;
 	margin-bottom: 40px;
+	@include laptop {
+		flex-wrap: wrap;
+		align-content: center;
+	}
 }
 
 .skill__figure {
@@ -181,13 +296,19 @@
 .skill__circle {
   fill: transparent;
   stroke: #ccc;
-  stroke-width: 10px; 
+  stroke-width: 10px;
+  @include medtop{
+		stroke-width: 13px;
+	}
+	@include laptop {
+		stroke-width: 13px;
+	}
 }
 
 .skill__circle_above {
   stroke: #00bfa5;
-  // stroke-dasharray: 200;
-  // stroke-dashoffset: 251;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 50;
 }
 
 .skill__title {
@@ -204,6 +325,16 @@
 .skills-row__item {
 	width: 160px;
 	height: 160px;
+}
+
+.skills__item{
+	@include laptop {
+		// text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 120px;
+	}
 }
 
 .socials__link-contact:hover, .socials__link-contact:focus{

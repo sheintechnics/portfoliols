@@ -107,6 +107,9 @@
 	transform: translate(-50%, -96%);
 	display: flex;	
 	justify-content: center;
+	@include smallphones{
+		font-size: 12px;
+	}
 }
 
 .login__form--not-visible{
@@ -189,7 +192,7 @@
 }
 
 .button__form-left, .button__form-right{
-		background-color: #268b8a;
+	background-color: #268b8a;
 }
 
 .login__form{
@@ -246,7 +249,8 @@
 	background: #26bbaa;
 	position: relative;
 	margin-right: 10px;
-	border-radius: 2px
+	border-radius: 2px;
+	cursor: pointer;
 }
 
 .checkbox__form-el, .radio__form-el{
@@ -276,6 +280,10 @@
 	margin-bottom: 10px;
 }
 
+.checkbox__form-text{
+	cursor: pointer;
+}
+
 .radio__form-row{
 	display: flex;
 	justify-content: center;
@@ -299,6 +307,7 @@
 	border-radius: 50%;
 	background: #fff;
 	margin-right: 10px;
+	cursor: pointer;
 }
 
 .radio__form-fake:after{
@@ -319,4 +328,8 @@
 .radio__form-el:checked + .radio__form-fake:after{
 	width: 8px;
 	height: 8px;
+}
+
+.radio__form-text{
+	cursor: pointer;
 }

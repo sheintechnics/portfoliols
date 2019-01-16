@@ -12,11 +12,91 @@
 	display: flex;
 	padding-top: 100px;
 	margin-bottom: -180px;
+	@include laptop{
+		padding-left: 40px;	
+	}
+	@include laptop{
+		padding-top: 50px;	
+	}	
+}
+
+.sidebar--open{
+	@include laptop{
+		display: none;
+	}
+}
+
+.sidebar{
+	@include laptop{
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 295px;
+		max-width: calc(100% - 40px);
+		color: #fff;
+	}	
+}
+
+.sidebar::before{
+	display: none;
+	@include laptop{
+		content: '';
+		display: block;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 320px;
+		height: 100Vh;
+		background: #00bfa5;
+		// opacity: 0.8;
+	}
+}
+
+.left-menu{
+	display: none;
+	@include laptop{
+		display: block;
+		position: absolute;
+		z-index: -1;
+		left: 100%;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		height: 50px;
+		width: 40px;
+		background: 0 0;
+		border: none;
+	}
+}
+
+.left-menu::before{
+	content: '';
+	display: block;
+	position: absolute;
+	left: -5px;
+	top: 0;
+	bottom: 0;
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	border: none;
+	box-shadow: 3px 0 3px 0 rgba(0,0,0,.2);
+	background: #00bfa5;
+	// opacity: 0.8;
 }
 
 .menu-vertical {
 	width: 320px;
 	margin-right: 136px;
+	@include laptop{
+		position: absolute;
+		top: 50%;
+		transform:translate(0,-50%);
+		left: -5%;
+		margin: auto;
+	}
 }
 
 .menu-vertical__item {
@@ -41,11 +121,23 @@
 	&:active {
 		color: darkmagenta;
 	}
+	@include	laptop{
+		color: #fff;
+		&:hover, &:focus {
+			color: beige;
+		}
+		&:active {
+			color: darkmagenta;
+		}	
+	}
 }
 
 .menu-vertical__item_active{
 	.menu-vertical__link{
-		color: #00bfa5;	
+		color: #00bfa5;
+		@include laptop{
+			color: #fffaae;
+		}
 	}
 	.menu-vertical__link::after{
 		content: "";
@@ -59,12 +151,16 @@
 		left: 100%;
 		top: 0;
 		bottom: 0;
+		@include	laptop{
+			display: none;	
+		}
 	}
 }
 
 .text{
 	max-width: 880px;
 	margin-bottom: 20px;
+	// padding-bottom: 20px;
 }
 
 .text__title{
@@ -74,6 +170,9 @@
 	font-size: 35px;
 	font-weight: 400;
 	margin-bottom: 28px;
+	@include	tablets{
+		font-size: 26px;	
+	}
 }
 
 .text__date{
@@ -85,4 +184,15 @@
 
 .text__info{
 	margin-bottom: 10px;
+}
+
+.overlay{
+	@include medtop{
+		padding-right: 40px;
+		margin-bottom: 20px;
+	}
+	@include laptop{
+		padding-right: 40px;
+		margin-bottom: 20px;
+	}
 }

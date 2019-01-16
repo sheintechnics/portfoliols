@@ -7,17 +7,43 @@
 	left: 0;
 	right: 0;
 	// display: flex;
+	@include laptop{
+		height: 170px;
+	}
+	@include tablets{
+		height: 147px;
+	}
 }
+
+
 .footer__row {
 	display: flex;
 	align-items: center;
+	@include phones {
+		height: 50%;
+	}
 }
 
-.footer__row: first-child {
+.footer__row:first-child {
 	border-bottom: 2px solid rgba(#fff, 0.1);
 }	
+
+.footer__row--tablets{
+	@include tablets{
+		flex-direction: column;
+	}
+}
+
 .menu__item {
 	margin-left: 30px;
+	@include laptop{
+	}
+	@include tablets{
+		margin-left: 10px;
+	}
+	@include phones{
+		display: flex;	
+	}	
 }
 
 .menu__link {
@@ -29,24 +55,70 @@
 	cursor: pointer;
 	&:hover, &:focus {
 		color: #00bfa5;
-			}
+	}
 	&:active {
 		color: #268b8a;
+	}
+	@include tablets{
+		font-size: 13.5px;
 	}
 }
 
 
 .footer__col {
+	display: flex;
 	width: 50%;
+	@include phones{
+		width: 100%;;	
+		justify-content: center;	
+	}
+	// @include tablets{
+	// 	width: 100%;
+	// }
 }
+
+.footer__col--70{
+	@include laptop{
+		width: 90%;
+	}
+	@include tablets{
+		width: 90%;
+	}
+}
+
+
 .footer__col_justify_right{
 	display: flex;		
 	justify-content: flex-end;
 	align-items: center;
 }
 
+.footer__col--100{
+	@include tablets{
+		width: 100%;
+	}
+}
+
+.footer__col--none{
+	@include laptop{
+		// margin-right: 50px;	
+	}
+	@include tablets{
+		display: none;
+	}
+}
+
+.footer__col--none2{
+	@include phones{
+		display: none;
+	}
+}
+
 .menu__list {
-	display: flex;	
+	display: flex;
+	@include phones{
+		// flex-direction: column;	
+	}	
 }
 
 .menu__item_active{
@@ -69,14 +141,36 @@
 	opacity: 0.5;
 	padding-left: 30px;
 	display: flex;
-	margin-top: 14px;
-	
+	margin-top: 14px;	
+	@include laptop{
+		padding: 0 15px 0 15px;	
+	}
+	@include tablets{
+		width: 100%;
+		padding-left: 0;
+		justify-content: center;
+		text-align: center;
+		margin-top: 24px;
+		// font-size: 12px;			
+	}
+	@include phones{
+		font-size: 16px;
+	}
+	@include smallphones{
+		font-size: 12px;
+	}
+}
 
+.copyright--right{
+	@include laptop{
+		// padding-left: 0px;
+		// padding-right: 10px;	
+	}
 }
 
 .socials_rounded{
 	margin-right: 33px;
-	position: relative;	
+	// position: relative;	
 }
 .socials__item--border {
 	border-radius: 50%;
@@ -85,7 +179,8 @@
 	height: 36px;
 	position: relative;
 	margin-left: 18px;
-	transition: .3s;	
+	transition: .3s;
+	cursor: pointer;
 }
 
 .svg__socials-footer {
@@ -102,9 +197,7 @@
 .socials__item--border:hover, .socials__item--border:focus {
 	background-color: #fff;
 	position: relative;
-	cursor: pointer;
 	z-index: 0;
-
 }
 
 .socials__item--border:hover, .socials__item--border:focus {

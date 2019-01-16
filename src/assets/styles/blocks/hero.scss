@@ -38,6 +38,8 @@
 	.socials__link-icon {
 		fill: #fff;
 	}
+	@include tablets{
+	}
 }
 
 .socials__link:active{
@@ -54,9 +56,9 @@
 	justify-content: center;
 	background-color: transparent;
 	outline: none;
+	cursor: pointer;
 	&:hover {
 		.svg__hamburger {
-			cursor: pointer;
 			width: 52px;
 			height: 39px;
 			transition: .3s;
@@ -93,6 +95,9 @@
 	width: 1176px;
 	height: 313px;
 	opacity: 0.06;
+	@include laptop{
+		width: 100%;
+	}
 }
 
 .hero__container {
@@ -144,6 +149,9 @@
 
 .hero__container {
 	margin-bottom: 82px;
+	@include tablets{
+		margin-bottom: 0px;
+	}
 }
 
 
@@ -159,9 +167,9 @@
 	margin: auto;
 	position: relative;
 	z-index: 10;
+	cursor: pointer;
 	&:hover{
 		.hero__btn-icon {
-			cursor: pointer;
 			width: 34px;
 			height: 19px;
 			transition: .3s;
@@ -197,6 +205,9 @@
 	position: relative;
 	top: 90px;
 	width: auto;
+	@include phones{
+		width: 200px;
+	}
 }
 
 .title--blog {
