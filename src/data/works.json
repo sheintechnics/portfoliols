@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title" : "1 Сайт",
+    "skills" : "1 Html, Css, JavaScript",
+    "photo" : "/assets/images/work-1.png",
+    "link" : "//loftschool.com"
+  },
+  {
+    "id": 2,
+    "title" : "2 Сайт",
+    "skills" : "2 Html, Css, JavaScript",
+    "photo" : "/assets/images/work-2.png",
+    "link" : "//loftschool.com"
+  },
+  {
+    "id": 3,
+    "title" : "3 Сайт",
+    "skills" : "3 Html, Css, JavaScript",
+    "photo" : "/assets/images/work-3.png",
+    "link" : "//loftschool.com"
+  },
+  {
+    "id": 4,
+    "title" : "4 Сайт",
+    "skills" : "4 Html, Css, JavaScript",
+    "photo" : "/assets/images/work-4.png",
+    "link" : "//loftschool.com"
+  }
+]

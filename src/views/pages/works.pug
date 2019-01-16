@@ -18,27 +18,29 @@ block content
 			.overlay-svg
 				+icon("works_header", "svg-title__main svg-title__main--size")
 				h1.title.title--width Мои работы
-		.works__row
-			.about__col.about__col_bg-white.about__col--center.works__col
-				h2.title.title--subtitle.title--nomargin Сайт школы онлайн
-				span.title--text-down образования
-				.desc Html, CSS, JavaScript
-				a(class="link__ls" href="https://loftschool.com/" target="_blank")
-					.link__ls-image
-						+icon('link', 'link')
-					.link__ls-text Посмотреть сайт
-			.about__col.about__col_bg-beige
-				.main__work
-					+image('work-1.png', 'Первая группа работ', 'work-image')
-				.add-work__row
-					.add-work__col.add-work__col--left
-						+image('work-2.png', 'Вторая группа работ', 'work-image__row')
-						button.btn-slider.btn-slider--up
-							+icon("arrow_down", "arrow")
-					.add-work__col.add-work__col--right
-						+image('work-3.png', 'Третья группа работ', 'work-image__row')
-						button.btn-slider.btn-slider--down
-							+icon("arrow_down", "arrow arrow--up")
+		.slider-container
+			#slider-component
+		//- .works__row
+		//- 	.about__col.about__col_bg-white.about__col--center.works__col
+		//- 		h2.title.title--subtitle.title--nomargin Сайт школы онлайн
+		//- 		span.title--text-down образования
+		//- 		.desc Html, CSS, JavaScript
+		//- 		a(class="link__ls" href="https://loftschool.com/" target="_blank")
+		//- 			.link__ls-image
+		//- 				+icon('link', 'link')
+		//- 			.link__ls-text Посмотреть сайт
+		//- 	.about__col.about__col_bg-beige
+		//- 		.main__work
+		//- 			+image('work-1.png', 'Первая группа работ', 'work-image')
+		//- 		.add-work__row
+		//- 			.add-work__col.add-work__col--left
+		//- 				+image('work-2.png', 'Вторая группа работ', 'work-image__row')
+		//- 				button.btn-slider.btn-slider--up
+		//- 					+icon("arrow_down", "arrow")
+		//- 			.add-work__col.add-work__col--right
+		//- 				+image('work-3.png', 'Третья группа работ', 'work-image__row')
+		//- 				button.btn-slider.btn-slider--down
+		//- 					+icon("arrow_down", "arrow arrow--up")
 		section.feedback
 			.feedback__bg
 				+image('bg.png', '', 'feedback-img')
