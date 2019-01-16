@@ -1,3 +1,73 @@
+.hamburger-menu-link{
+  vertical-align: middle;
+  height: 22px;
+  align-items: center;
+  // margin-left: 30px;
+  display: flex;
+  position: fixed;
+  top: 32px;
+  right: 35px;
+  z-index: 20;
+  background-color: transparent;
+  outline: none;
+  &:hover{
+    .hamburger-menu__bars, .hamburger-menu__bars:after, .hamburger-menu__bars:before{
+      background: #fff;
+      transition: .3s;
+    }
+  }
+  &:focus{
+    .hamburger-menu__bars, .hamburger-menu__bars:after, .hamburger-menu__bars:before{
+      background: beige;
+    }
+  }
+  &:active{
+    .hamburger-menu__bars, .hamburger-menu__bars:after, .hamburger-menu__bars:before{
+      background: #268b8a;
+    }
+  }
+}
+
+.hamburger-menu__bars{
+  &, &:before, &:after{
+    background: #eaf2f2;
+    width: 35px;
+    height: 5px;
+    border-radius: 3px;
+    z-index: 20;
+    cursor: pointer;
+    transition: transform .25s ease;
+  }   
+  &:before, &:after{
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  &:before{
+    top: -5px;
+  }
+  &:after{
+    bottom: -5px;
+  }
+}
+
+
+.hamburger-menu-link.is-active{
+  top: 32px;
+  right: 35px;
+  .hamburger-menu__bars{
+    background: transparent;
+    &:before{
+      transform: translateY(19px) translateX(0) rotate(45deg);
+      border-radius: 5px;
+    }
+    &:after{
+      transform: translateY(-7px) translateX(0) rotate(-45deg);
+      border-radius: 5px;
+    }
+  }
+}
+
 .hamburger-menu{
   position: fixed;
   left: 0;
@@ -5,7 +75,7 @@
   background: rgba(32, 181, 161, 0.85);
   align-items: center;
   justify-content: center;
-  z-index: 20;
+  z-index: 19;
   transition: opacity .3s;
   height: 100vh;
 }
@@ -13,11 +83,11 @@
 .is-active{
   display: flex;
   opacity: 1;
-  left: 0;
+  // left: 0;
   right: 0;
   bottom: 0;
   top: 0;
-  z-index: 20;
+  // z-index: 20;
 }
 
 @keyframes pulse{
@@ -51,6 +121,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: 700px; 
 }
 
 .burger-menu__link{
@@ -61,7 +132,13 @@
   width: 100%;
   margin-bottom: 46px;
   &:hover{
-    text-decoration: underline
+    text-decoration: underline;
+  }
+  &:focus{
+    color: beige;
+  }
+  &:active{
+    color: #268b8a;
   }
 }
 
