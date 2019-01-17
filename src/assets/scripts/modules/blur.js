@@ -1,6 +1,4 @@
-window.onload = function(){
-  blur().set();
-}
+document.addEventListener("DOMContentLoaded", blur().set());
 
 window.addEventListener('resize', function(){
   blur().set();

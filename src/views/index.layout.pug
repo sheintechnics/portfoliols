@@ -10,8 +10,17 @@ html(lang="ru")
     title Portfolio | #{title}
     link(rel='icon' href='assets/images/favicon.ico')
     link(rel='stylesheet' href='main.min.css')
-  body.scroll-none
-    block content
+  body.scroll-none(id="content")
+    .preloader(id="page-preloader")
+      .loader
+        <svg class="circles" width="144" height="144">
+            <circle class="path" cx="72" cy="72" r="70" stroke="#fff" stroke-width="2" fill="none" />
+            <circle class="path1" cx="72" cy="72" r="60" stroke="#fff" stroke-width="2" fill="none" />
+            <circle class="path2" cx="72" cy="72" r="50" stroke="#fff" stroke-width="2" fill="none" />
+        </svg>
+        span(id="load_perc") 0%
+    .wrapper
+        block content
 
     script(src='index.bundle.js')
     block scripts
