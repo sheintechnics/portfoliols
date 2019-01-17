@@ -9,9 +9,19 @@
 		<link rel="stylesheet" href="main.min.css">
 	</head>
 	<body>
+		<div class="preloader" id="page-preloader">
+			<div class="loader"><svg class="circles" width="144" height="144">
+<circle class="path" cx="72" cy="72" r="70" stroke="#fff" stroke-width="2" fill="none" />
+<circle class="path1" cx="72" cy="72" r="60" stroke="#fff" stroke-width="2" fill="none" />
+<circle class="path2" cx="72" cy="72" r="50" stroke="#fff" stroke-width="2" fill="none" />
+</svg><span id="load_perc">0%</span>
+			</div>
+		</div>
 		<div class="wrapper">
 			<div class="maincontent">
 				<header class="hero">
+					<div class="hero__bg"><img class="hero__section-img" src="assets/images/welcome-bg.jpg" alt=""/>
+					</div>
 					<div class="hero-row">
 						<div class="hero__links">
 							<ul class="socials">
@@ -29,18 +39,13 @@
 										</svg></a></li>
 							</ul>
 						</div>
-						<button class="hero__menu-btn">
-							<svg class="svg__hamburger">
-								<use xlink:href="assets/images/icons/sprite.svg#hamburger"></use>
-							</svg>
-						</button>
+					</div>
+					<div class="section-title">
+						<svg class="svg-title svg-title--blog">
+							<use xlink:href="assets/images/icons/sprite.svg#blog_header"></use>
+						</svg>
 					</div>
 					<div class="hero__container">
-						<div class="section-title">
-							<svg class="svg-title svg-title--blog">
-								<use xlink:href="assets/images/icons/sprite.svg#blog_header"></use>
-							</svg>
-						</div>
 						<div class="user">
 							<div class="user__avatar" style="background-image: url(assets/images/avatar.jpg);"></div>
 							<h1 class="title title--blog">Блог</h1>
@@ -61,7 +66,7 @@
 					<div class="articles">
 						<aside class="sidebar sidebar--open">
 							<nav class="menu-vertical">
-								<ul class="menu-vertical__list">
+								<ul class="menu-vertical__list" id="menu-vertical__list">
 									<li class="menu-vertical__item menu-vertical__item_active"><a class="menu-vertical__link" href="#">Самое важное в SASS</a></li>
 									<li class="menu-vertical__item"><a class="menu-vertical__link" href="#">Приёмы в вёрстке, без которых не обходится ни один сайт</a></li>
 									<li class="menu-vertical__item"><a class="menu-vertical__link" href="#">Самый необхожимый набор Gulp плагинов</a></li>
@@ -90,7 +95,7 @@
 					<div class="footer__row footer__row_border_bottom">
 						<div class="footer__col footer__col--70">
 							<nav class="menu">
-								<ul class="menu__list">
+								<ul class="menu__list" id="menu__list">
 									<li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
 									<li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
 									<li class="menu__item menu__item_active"><a class="menu__link" href="blog.html">Блог</a></li>
@@ -130,13 +135,13 @@
 				</footer>
 			</div>
 		</div>
-		<div class="hamburger-menu-link" id="hamburger-menu-link">
+		<button class="hamburger-menu-link" id="hamburger-menu-link">
 			<div class="hamburger-menu__bars"></div>
-		</div>
+		</button>
 		<div class="hamburger-menu" id="hamburger-menu">
 			<div class="hamburger-menu__items">
 				<nav class="burger-menu">
-					<ul class="burger-menu__list">
+					<ul class="burger-menu__list" id="burger-menu__list">
 						<li class="burger-menu__item"><a class="burger-menu__link" href="works.html">Мои работы</a></li>
 						<li class="burger-menu__item"><a class="burger-menu__link" href="about.html">Обо мне</a></li>
 						<li class="burger-menu__item burger-menu__item_active"><a class="burger-menu__link" href="blog.html">Блог</a></li>
@@ -145,7 +150,83 @@
 				</nav>
 			</div>
 		</div>
-		<script src="bootloader.bundle.js"></script>
-		<script src="vendor.bundle.js"></script>
+		<script type="text/x-template" id="skills-list">
+			<ul class="skills">
+				<li class="skills__item" v-for="skillsGroupObj in skills">
+					<skills-row :skillsGroupObj="skillsGroupObj"></skills-row>
+				</li>
+			</ul>
+		</script>
+		<script type="text/x-template" id="skills-item">
+			<div class="skills-row">
+				<div class="skills-row__title">{{skillsGroupObj.skillsGroup}}</div>
+				<ul class="skills-row__list">
+					<li class="skills-row__item" v-for="(skillPercentage, skillTitle) in skillsGroupObj.skills">
+						<skill :skillPercentage="skillPercentage" :skillTitle="skillTitle"></skill>
+					</li>
+				</ul>
+			</div>
+		</script>
+		<script type="text/x-template" id="skill">
+			<div class="skill">
+				<div class="skill__circle">
+					<svg class="skill__figure" viewBox="0 0 100 100" preserveAspectRatio="none">
+						<circle class="skill__circle skill__circle_under" cx="50" cy="50" r="40"></circle>
+						<circle class="skill__circle skill__circle_above" cx="50" cy="50" r="40" ref="circle"></circle>
+					</svg>
+					<div class="skill__title">{{skillTitle}}</div>
+				</div>
+			</div>
+		</script>
+		<script type="text/x-template" id="slider-root">
+			<div class="slider">
+				<info :work="currentWork"></info>
+				<display :work="currentWork"></display>
+				<btns :works="works" :index="currentIndex" @slide="handleSlide"></btns>
+			</div>
+		</script>
+		<script type="text/x-template" id="slider-info">
+			<div class="slider__info-container">
+				<div class="slider__info">
+					<div class="slider__info-title">
+						<h2 class="title title--subtitle title--nomargin">{{work.title}}</h2>
+						<div class="slider__info-skills">{{work.skills}}</div>
+						<div class="slider__info-button"><a class="link__ls" :href="work.link" target="_blank">
+								<div class="link__ls-image">
+									<svg class="link">
+										<use xlink:href="assets/images/icons/sprite.svg#link"></use>
+									</svg>
+								</div>
+								<div class="link__ls-text">Посмотреть сайт</div></a></div>
+					</div>
+				</div>
+			</div>
+		</script>
+		<script type="text/x-template" id="slider-display">
+			<div class="slider__display"><img class="slider__big-pic" :src="work.photo" alt=""></div>
+		</script>
+		<script type="text/x-template" id="slider-btns">
+			<div class="slider__buttons">
+				<div class="slider__button" @click="slide('prev')">
+					<div class="slider__button-container"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt="">
+						<button class="btn-slider btn-slider--up">
+							<svg class="arrow">
+								<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="slider__button" @click="slide('next')">
+					<div class="slider__button-container"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt="">
+						<button class="btn-slider btn-slider--down">
+							<svg class="arrow arrow--up">
+								<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</script>
+		<script src="blog.bundle.js"></script>
 	</body>
 </html>
