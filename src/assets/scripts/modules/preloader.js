@@ -22,16 +22,14 @@ function imageLoaded() {
 	console.log(imagesLoadedCount);
 	percDisplay.innerHTML = (((100/imagesTotalCount)*imagesLoadedCount)<<0) + '%';
 	console.log((100/imagesTotalCount)*imagesLoadedCount);
-	if(imagesLoadedCount >= imagesTotalCount)
-	{
-		setTimeout(function() {
-			if(!preloader.classList.contains('done')){
-				preloader.classList.add('done');
-			}
-			div.classList.add('visible');
-		}, 2000);
+	if(imagesLoadedCount >= imagesTotalCount){
 		window.onload = function() {
 			var div = document.querySelector('.wrapper');
+			setTimeout(function() {
+				if(!preloader.classList.contains('done')){
+					preloader.classList.add('done');
+				}
+			}, 2000);
 			div.classList.add('visible');
 		}
 	}

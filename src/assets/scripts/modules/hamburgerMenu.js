@@ -19,7 +19,7 @@ let hamburger = (options => {
     if (counter === items.length) counter = 0;
   };
 
-  let _toggleMenu = function(e) {
+  let _toggleMenu = function() {
     button.classList.toggle("is-active");
     menu.classList.toggle("is-active");
     body.classList.toggle("locked");
