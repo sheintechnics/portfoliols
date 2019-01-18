@@ -13,15 +13,15 @@ for(var i = 0; i < imagesTotalCount; i++)
 		imageClone.src = images[i].src;
 	}
 
-	console.log(imagesTotalCount);
-	console.log(imagesLoadedCount);
+	// console.log(imagesTotalCount);
+	// console.log(imagesLoadedCount);
 	
 
 function imageLoaded() {
 	imagesLoadedCount++;
-	console.log(imagesLoadedCount);
+	// console.log(imagesLoadedCount);
 	percDisplay.innerHTML = (((100/imagesTotalCount)*imagesLoadedCount)<<0) + '%';
-	console.log((100/imagesTotalCount)*imagesLoadedCount);
+	// console.log((100/imagesTotalCount)*imagesLoadedCount);
 	if(imagesLoadedCount >= imagesTotalCount){
 		window.onload = function() {
 			var div = document.querySelector('.wrapper');

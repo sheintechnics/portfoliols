@@ -74,16 +74,16 @@ block content
 						.feedback__form-fields
 							.form-field
 								label.label.label-name(for="id-name") Имя
-								input.input.form-name(id="id-name" placeholder="Имя" type="text")
+								input.input.form-name(id="id-name" placeholder="Имя" type="text" name="name")
 							.form-field
 								label.input.label.label-mail(for="id-mail") Email
-								input.input.form-mail(id="id-mail" placeholder="Email" type="email")
+								input.input.form-mail(id="id-mail" placeholder="Email" type="email" name="email")
 							.form-field
 								label.label.label-text(for="id-text") Ваше сообщение
-								textarea.input.form-text(id="id-text" placeholder="Ваше сообщениe" type="text")
+								textarea.input.form-text(id="id-text" placeholder="Ваше сообщениe" type="text" name="message")
 						.button__row
 							.button__form
-								button.button__form-left.button__form-left--color(type="submit") Отправить
+								button.button__form-left.button__form-left--color.btn__form(type="submit") Отправить
 							.button__form
 								button.button__form-right.button__form-right--color(type="reset") Очистить
 			button.hero__btn.hero__btn--rotate
