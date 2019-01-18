@@ -36,88 +36,96 @@
 					</div>
 				</div>
 				<div class="welcome__container">
-					<form class="login__form login__form--not-visible">
-						<h3 class="user-data__title title title--subtitle">Авторизуйтесь</h3>
-						<div class="form-fields">
-							<div class="form-field">
-								<label class="label-login" for="id-login">
-									<svg class="svg-login">
-										<use xlink:href="assets/images/icons/sprite.svg#login"></use>
-									</svg>
-								</label>
-								<input class="input-log" id="id-login" placeholder="Логин" type="text">
+					<div class="flip-container" id="myCard">
+						<div class="flipper" id="flipper">
+							<div class="front front-moz">
+								<div class="user user--width">
+									<div class="user__avatar" style="background-image: url(assets/images/avatar.jpg);"></div>
+									<div class="user__info">
+										<div class="user__name user__name--color">Сергей Курников</div>
+										<div class="user__desc user__desc--color">Личный сайт веб-разработчика</div>
+									</div>
+									<div class="hero__links hero__links--bottom">
+										<ul class="socials">
+											<li class="socials__item"><a class="socials__link_vk socials__link" href="https://vk.com/id50684213" target="_blank">
+													<svg class=" socials__link-icon socials__link-icon--color">
+														<use xlink:href="assets/images/icons/sprite.svg#vk"></use>
+													</svg></a></li>
+											<li class="socials__item"><a class="socials__link_github socials__link" href="https://github.com/SergeyKurnikov" target="_blank">
+													<svg class=" socials__link-icon socials__link-icon--color">
+														<use xlink:href="assets/images/icons/sprite.svg#github"></use>
+													</svg></a></li>
+											<li class="socials__item"><a class="socials__link_in socials__link" href="#" target="_blank">
+													<svg class=" socials__link-icon socials__link-icon--color">
+														<use xlink:href="assets/images/icons/sprite.svg#in"></use>
+													</svg></a></li>
+										</ul>
+									</div>
+									<div class="links__row">
+										<nav class="link-welcome">
+											<ul class="link-welcome__list" id="link-welcome__list">
+												<li class="link-welcome__item"><a class="link-welcome__link" href="works.html">Мои работы</a></li>
+												<li class="link-welcome__item"><a class="link-welcome__link" href="about.html">Обо мне</a></li>
+												<li class="link-welcome__item"><a class="link-welcome__link" href="blog.html">Блог</a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
 							</div>
-							<div class="form-field">
-								<label class="label-pass" for="id-pass">
-									<svg class="svg-login">
-										<use xlink:href="assets/images/icons/sprite.svg#password"></use>
-									</svg>
-								</label>
-								<input class="input-pass" id="id-pass" placeholder="Password" type="password">
+							<div class="back">
+								<form class="login__form">
+									<h3 class="user-data__title title title--subtitle">Авторизуйтесь</h3>
+									<div class="form-fields">
+										<div class="form-field">
+											<label class="label-login" for="id-login">
+												<svg class="svg-login">
+													<use xlink:href="assets/images/icons/sprite.svg#login"></use>
+												</svg>
+											</label>
+											<input class="input-log" id="id-login" placeholder="Логин" type="text" name="login">
+										</div>
+										<div class="form-field">
+											<label class="label-pass" for="id-pass">
+												<svg class="svg-login">
+													<use xlink:href="assets/images/icons/sprite.svg#password"></use>
+												</svg>
+											</label>
+											<input class="input-pass" id="id-pass" placeholder="Password" type="password" name="password">
+										</div>
+									</div>
+									<label class="checkbox__form" for="human">
+										<input class="checkbox__form-el" type="checkbox" name="human" id="human">
+										<div class="checkbox__form-fake"></div>
+										<div class="checkbox__form-text">Я человек</div>
+									</label>
+									<div class="question__form">Вы точно не робот?</div>
+									<div class="radio__form-row">
+										<label class="radio__form radio__form--right" for="yes">
+											<input class="radio__form-el" type="radio" name="robot" id="yes">
+											<div class="radio__form-fake"></div>
+											<div class="radio__form-text">Да</div>
+										</label>
+										<label class="radio__form" for="no">
+											<input class="radio__form-el" type="radio" checked name="robot" id="no">
+											<div class="radio__form-fake"></div>
+											<div class="radio__form-text">Не уверен</div>
+										</label>
+									</div>
+									<div class="button__row">
+										<div class="button__form"><a class="button__form-left button__form-left--ref" href="index.html"> <span>На главную</span></a></div>
+										<div class="button__form">
+											<button class="button__form-right button__form-right--ref btn__form" type="submit">Войти</button>
+										</div>
+									</div>
+								</form>
 							</div>
-						</div>
-						<label class="checkbox__form" for="human">
-							<input class="checkbox__form-el" type="checkbox" name="human" id="human">
-							<div class="checkbox__form-fake"></div>
-							<div class="checkbox__form-text">Я человек</div>
-						</label>
-						<div class="question__form">Вы точно не робот?</div>
-						<div class="radio__form-row">
-							<label class="radio__form radio__form--right" for="yes">
-								<input class="radio__form-el" type="radio" name="robot" id="yes">
-								<div class="radio__form-fake"></div>
-								<div class="radio__form-text">Да</div>
-							</label>
-							<label class="radio__form" for="no">
-								<input class="radio__form-el" type="radio" checked name="robot" id="no">
-								<div class="radio__form-fake"></div>
-								<div class="radio__form-text">Не уверен</div>
-							</label>
-						</div>
-						<div class="button__row">
-							<div class="button__form"><a class="button__form-left button__form-left--ref" href="index.html"> <span>На главную</span></a></div>
-							<div class="button__form">
-								<button class="button__form-right" type="submit">Войти</button>
-							</div>
-						</div>
-					</form>
-					<div class="user user--width">
-						<div class="user__avatar" style="background-image: url(assets/images/avatar.jpg);"></div>
-						<div class="user__info">
-							<div class="user__name user__name--color">Сергей Курников</div>
-							<div class="user__desc user__desc--color">Личный сайт веб-разработчика</div>
-						</div>
-						<div class="hero__links hero__links--bottom">
-							<ul class="socials">
-								<li class="socials__item"><a class="socials__link_vk socials__link" href="https://vk.com/id50684213" target="_blank">
-										<svg class=" socials__link-icon socials__link-icon--color">
-											<use xlink:href="assets/images/icons/sprite.svg#vk"></use>
-										</svg></a></li>
-								<li class="socials__item"><a class="socials__link_github socials__link" href="https://github.com/SergeyKurnikov" target="_blank">
-										<svg class=" socials__link-icon socials__link-icon--color">
-											<use xlink:href="assets/images/icons/sprite.svg#github"></use>
-										</svg></a></li>
-								<li class="socials__item"><a class="socials__link_in socials__link" href="#" target="_blank">
-										<svg class=" socials__link-icon socials__link-icon--color">
-											<use xlink:href="assets/images/icons/sprite.svg#in"></use>
-										</svg></a></li>
-							</ul>
-						</div>
-						<div class="links__row">
-							<nav class="link-welcome">
-								<ul class="link-welcome__list" id="link-welcome__list">
-									<li class="link-welcome__item"><a class="link-welcome__link" href="works.html">Мои работы</a></li>
-									<li class="link-welcome__item"><a class="link-welcome__link" href="about.html">Обо мне</a></li>
-									<li class="link-welcome__item"><a class="link-welcome__link" href="blog.html">Блог</a></li>
-								</ul>
-							</nav>
 						</div>
 					</div>
 				</div>
 				<div class="copyright copyright--welcome">
 					<p>© Сергей Курников | создано с любовью в LoftSchool | 2019</p>
 				</div>
-				<button class="button__login button__login--position">Авторизоваться</button>
+				<button class="button__login button__login--position" id="btnFlip">Авторизоваться</button>
 			</div>
 		</div>
 		<script src="index.bundle.js"></script>
