@@ -5,6 +5,7 @@ block variables
 	- var number = 1
 
 block scripts
+	script(src='about.bundle.js')
 	//- script(src='about.bundle.js')
 	//- script(src='map.js') function initMap() {var uluru = {lat: -25.344, lng: 131.036}; var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru}); var marker = new google.maps.Marker({position: uluru, map: map});}
 	//- script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACbB1zw85rUBsteWgJMzTUtG7nGKfkoxw")
@@ -44,20 +45,7 @@ block content
 				.about__small-desc.text-block
 					p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
 				.about__info-container
-					- var skills = [['Frontend', [['HTML5', 230], ['CSS3', 230], ['JS & jQuery', 180]]],['Backend', [['PHP',150], ['mySQL',150], ['Node.js & npm',180], ['Mongo.db',180]]],['Workflow', [['Git',220], ['Gulp',200], ['Bower',200]]]]
-					ul.skills
-						each skillsrow in skills
-							li.skills__item.skills-row
-								.skills-row__title #{skillsrow[0]}
-								ul.skills-row__list
-									each skill in skillsrow[1]
-										li.skills-row__item
-											.skill
-												.skill__circle
-													svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
-														circle(cx="50" cy="50" r="30").skill__circle.skill__circle_under
-														circle(cx="50" cy="50" r="30" style="stroke-dasharray:"+skill[1]).skill__circle.skill__circle_above
-													.skill__title #{skill[0]}	
+					#skills-component
 		section.contacts
 			.contacts__overlay
 				.google-map(id="map")

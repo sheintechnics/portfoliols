@@ -1,10 +1,26 @@
-.welcome{
+.parrallax{
 	position: fixed;
 	top: 0;
 	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}
+
+.prallax__layer{
+	position: absolute;
+	top: 30%;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	background: url(assets/images/welcome-bg.jpg) center center/cover no-repeat;
+}
+
+.parallax__image{
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .welcome__container{
@@ -119,7 +135,8 @@
 .form-field{
 	margin-bottom: 20px;
 	display: flex;
-	justify-content: center;	
+	justify-content: center;
+	position: relative;	
 }
 
 .button__login{
@@ -131,6 +148,7 @@
 	color: #fff;
 	font-family: Roboto;
 	border-radius: 5px;
+	outline: none;
 }
 
 .button__login--position{
@@ -241,6 +259,7 @@
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 10px;
+	position: relative;
 }
 
 .checkbox__form-fake{

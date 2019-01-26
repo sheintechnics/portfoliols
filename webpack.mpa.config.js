@@ -4,7 +4,7 @@ const env = process.env.NODE_ENV;
 module.exports = {
   entry: {
     about: "./src/assets/scripts/about.js",
-    auth: "./src/assets/scripts/auth.js",
+    index: "./src/assets/scripts/index.js",
     works: "./src/assets/scripts/works.js",
     blog: "./src/assets/scripts/blog.js"
   },

@@ -128,6 +128,7 @@
 	// }
 }
 
+
 .title::before, .title::after {
 	content: "";
 	display: inline-block;
@@ -262,15 +263,15 @@
 .skill {
   display: block;
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
   @include medtop {
 		width: 140px;
 		height: 140px;
 	}
 	@include laptop {
-		width: 140px;
-		height: 140px;
+		width: 120px;
+		height: 120px;
 		margin: 0 auto;
 	}
 }
@@ -296,7 +297,7 @@
 .skill__circle {
   fill: transparent;
   stroke: #ccc;
-  stroke-width: 10px;
+  stroke-width: 13px;
   @include medtop{
 		stroke-width: 13px;
 	}
@@ -307,8 +308,14 @@
 
 .skill__circle_above {
   stroke: #00bfa5;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 50;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+}
+
+.skills-row__title{
+	@include laptop {
+		text-align: center;
+	}
 }
 
 .skill__title {

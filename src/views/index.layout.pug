@@ -10,7 +10,7 @@ html(lang="ru")
     title Portfolio | #{title}
     link(rel='icon' href='assets/images/favicon.ico')
     link(rel='stylesheet' href='main.min.css')
-  body
+  body.scroll-none(id="content")
     .preloader(id="page-preloader")
       .loader
         <svg class="circles" width="144" height="144">
@@ -20,13 +20,7 @@ html(lang="ru")
         </svg>
         span(id="load_perc") 0%
     .wrapper
-      .maincontent
-        include ./common/hero.pug
         block content
-        include ./common/footer.pug
-    include ./common/hamburger-menu.pug
-    include ./components/entry.pug
-    
-    //- script(src='bootloader.bundle.js')
-    //- script(src='vendor.bundle.js')
+
+    script(src='index.bundle.js')
     block scripts

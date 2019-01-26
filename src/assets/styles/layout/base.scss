@@ -24,10 +24,19 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.scroll-none{
+  overflow: hidden;
+}
+
 .wrapper {
   overflow: hidden;
   min-height: 100%;
   position: relative;
+  opacity: 0;
+}
+
+.visible{
+  opacity: 1;
 }
 
 .container {

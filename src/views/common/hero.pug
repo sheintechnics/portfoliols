@@ -1,16 +1,14 @@
 header.hero
+	.hero__bg
+		+image("welcome-bg.jpg", "", "hero__section-img")
 	.hero-row
 		.hero__links
 			+socials(["vk", "github", "in"], '', ["https://vk.com/id50684213", "https://github.com/SergeyKurnikov", "#"]) 
-			
-		button.hero__menu-btn
-			+icon("hamburger", "svg__hamburger")
 
+	block title
+		.section-title
+			+icon("portfolio_header", "svg-title")
 	.hero__container
-		block title
-			.section-title
-				+icon("portfolio_header", "svg-title")
-
 		.user
 			.user__avatar(style="background-image: url(assets/images/avatar.jpg);")
 			block user__info
@@ -18,5 +16,5 @@ header.hero
 					.user__name Сергей Курников
 					.user__desc Личный сайт веб-разработчика
 	block hero__btn
-		button.hero__btn
+		button.hero__btn.hero__btn--abs
 			+icon("arrow_down", "hero__btn-icon")

@@ -1,50 +1,69 @@
-extends ../auth.layout.pug
+extends ../index.layout.pug
 block variables
 	-var title = 'Welcome'
 block content
 	.welcome
+		.parallax
+			.prallax__layer
+				+image("layer100.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer200.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer300.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer400.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer500.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer800.png", "", "parallax__image")
+			.prallax__layer
+				+image("layer900.png", "", "parallax__image")
 		.welcome__container
-			form.login__form.login__form--not-visible
-				h3.user-data__title.title.title--subtitle Авторизуйтесь
-				.form-fields
-					.form-field
-						label.label-login(for="id-login")
-							+icon("login", "svg-login")
-						input.input-log(id="id-login" placeholder="Логин" type="text")
-					.form-field
-						label.label-pass(for="id-pass")
-							+icon("password", "svg-login")
-						input.input-pass(id="id-pass" placeholder="Password" type="password")
-				label.checkbox__form(for="human")
-					input.checkbox__form-el(type="checkbox" name="human" id="human")
-					.checkbox__form-fake
-					.checkbox__form-text Я человек
-				.question__form Вы точно не робот?
-				.radio__form-row
-					label.radio__form.radio__form--right(for="yes")
-						input.radio__form-el(type="radio" name="robot" id="yes")
-						.radio__form-fake
-						.radio__form-text Да
-					label.radio__form(for="no")
-						input.radio__form-el(type="radio" checked name="robot" id="no")
-						.radio__form-fake
-						.radio__form-text Не уверен
-				.button__row
-					.button__form
-						a.button__form-left.button__form-left--ref(href="index.html") 
-							span На главную
-					.button__form
-						button.button__form-right(type="submit") Войти
-			.user.user--width
-				.user__avatar(style="background-image: url(assets/images/avatar.jpg);")
-				block user__info
-					.user__info
-						.user__name.user__name--color Сергей Курников
-						.user__desc.user__desc--color Личный сайт веб-разработчика
-				.hero__links.hero__links--bottom
-					+socials-green(["vk", "github", "in"], '', ["https://vk.com/id50684213", "https://github.com/SergeyKurnikov", "#"])
-				.links__row
-					+nav("link-welcome", ["Мои работы", "Обо мне", "Блог"], '',["works.html", "about.html", "blog.html"])
+			.flip-container(id="myCard")
+				.flipper(id="flipper")
+					.front.front-moz
+						.user.user--width
+							.user__avatar(style="background-image: url(assets/images/avatar.jpg);")
+							block user__info
+								.user__info
+									.user__name.user__name--color Сергей Курников
+									.user__desc.user__desc--color Личный сайт веб-разработчика
+							.hero__links.hero__links--bottom
+								+socials-green(["vk", "github", "in"], '', ["https://vk.com/id50684213", "https://github.com/SergeyKurnikov", "#"])
+							.links__row
+								+nav("link-welcome", ["Мои работы", "Обо мне", "Блог"], '',["works.html", "about.html", "blog.html"])
+					.back
+						form.login__form
+							h3.user-data__title.title.title--subtitle Авторизуйтесь
+							.form-fields
+								.form-field
+									label.label-login(for="id-login")
+										+icon("login", "svg-login")
+									input.input-log(id="id-login" placeholder="Логин" type="text" name="login")
+								.form-field
+									label.label-pass(for="id-pass")
+										+icon("password", "svg-login")
+									input.input-pass(id="id-pass" placeholder="Password" type="password" name="password")
+							label.checkbox__form(for="human")
+								input.checkbox__form-el(type="checkbox" name="human" id="human")
+								.checkbox__form-fake
+								.checkbox__form-text Я человек
+							.question__form Вы точно не робот?
+							.radio__form-row
+								label.radio__form.radio__form--right(for="yes")
+									input.radio__form-el(type="radio" name="robot" id="yes")
+									.radio__form-fake
+									.radio__form-text Да
+								label.radio__form(for="no")
+									input.radio__form-el(type="radio" checked name="robot" id="no")
+									.radio__form-fake
+									.radio__form-text Не уверен
+							.button__row
+								.button__form
+									a.button__form-left.button__form-left--ref(href="index.html") 
+										span На главную
+								.button__form
+									button.button__form-right.button__form-right--ref.btn__form(type="submit") Войти
 		.copyright.copyright--welcome
 			p © Сергей Курников | создано с любовью в LoftSchool | 2019
-		button.button__login.button__login--position Авторизоваться
+		button.button__login.button__login--position(id="btnFlip") Авторизоваться
