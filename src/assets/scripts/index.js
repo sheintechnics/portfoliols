@@ -45,7 +45,7 @@ form.onsubmit = function(e){
   .then(function(response){
     localStorage.setItem('token', response.token);
     if(1==1){
-      document.location.replace("http://http://localhost:8080/");
+      document.location.replace("localhost:8080/");
     }else{
       let content = document.createElement('div');
       content.innerHTML = 'Вы не правильно ввели капчу!';
