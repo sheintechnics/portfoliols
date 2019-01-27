@@ -10,5 +10,7 @@
   "laptop": "1200px",
   "tablets": "768px",
   "phones": "480px",
-  "smallphones": "375px"
+  "smallphones": "375px",
+  "light-green": "#6c9c5a",
+  "text-color-admin": "#455a64"
 }
