@@ -2,8 +2,8 @@
   .header
     .container.container_header
       h1.header__title Панель администрирования
-      //- a(href="/portfolio").header__link Вернуться на сайт
-      a(href="/").header__link Вернуться на сайт
+      a(href="/portfoliols").header__link Вернуться на сайт
+      //- a(href="/").header__link Вернуться на сайт
 </template>
 <script>
 export default {
@@ -13,7 +13,7 @@ export default {
 <style lang="scss">
   .header{
     position: relative;
-    background: $light-green;
+    background: #00bfa5;
   }
   .header__title{
     font-size: 28px;

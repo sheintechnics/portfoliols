@@ -62,7 +62,7 @@ export default {
 
 }
 .table__th{
-  border-bottom: 1px solid $light-green;
+  border-bottom: 1px solid #00bfa5;
   padding: 20px 0 20px 30px;
   font-weight: 500;
   font-size: 14px;

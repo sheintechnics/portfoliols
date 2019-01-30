@@ -62,7 +62,7 @@ body {
   overflow: hidden;
   min-height: 100%;
   position: relative;
-  background: url('./assets/images/bg-water.jpg') center center / cover no-repeat;
+  background: url('./assets/images/welcome-bg.jpg') center center / cover no-repeat;
   &:before{
     content: "";
     position: absolute;
@@ -129,12 +129,12 @@ button {
 }
 
 .button{
-  background-color: $light-green;
+  background-color: #00bfa5;
   padding: 14px 20px;
   border-radius: 5px;
   color: #fff;
   &:hover{
-    background-color: $green;
+    background-color: #268b8a;
   }
 }
 

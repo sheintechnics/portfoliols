@@ -83,11 +83,10 @@ export default {
   }
   .work-form__icon{
     display: block;
-
     margin: 0 10px;
   }
   .work-form__text{
-    color: $light-green;
+    color: #268b8a;
     margin-right: 10px;
   }
   .work-form__input_file{

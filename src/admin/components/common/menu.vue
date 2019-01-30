@@ -4,11 +4,11 @@
       nav.menu
         ul.menu__list
           li(:class="{menu__item_active: activeSkills.activeClass}").menu__item
-            router-link(to="/admin/").menu__link Обо мне
+            router-link(to="/portfoliols/admin/").menu__link Обо мне
           li(:class="{menu__item_active: activeArticles.activeClass}").menu__item
-            router-link(to="/admin/blog").menu__link Блог
+            router-link(to="/portfoliols/admin/blog").menu__link Блог
           li(:class="{menu__item_active: activeWorks.activeClass}").menu__item
-            router-link(to="/admin/works").menu__link Мои работы
+            router-link(to="/portfoliols/admin/works").menu__link Мои работы
 </template>
 <script>
 import {mapState} from 'vuex';
@@ -25,7 +25,7 @@ export default {
 <style lang="scss">
   .navigation{
     position: relative;
-    background-color: #f0efe9;
+    background-color: #eeebdf;
   }
   .menu__list{
     display: flex;
@@ -51,11 +51,11 @@ export default {
   .menu__item_active{
     background-color: #fff;
     .menu__link{
-      color: $light-green;
+      color: #00bfa5;
     }
   }
   .menu__link{
-    color: $text-color-admin;
+    color: #268b8a;
     opacity: 0.8;
     font-weight: 500;
     padding: 25px 0;
@@ -63,7 +63,7 @@ export default {
     display: block;
     text-align: center;
     &:hover{
-      color: $light-green;
+      color: #00bfa5;
     }
   }
 

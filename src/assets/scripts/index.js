@@ -7,7 +7,7 @@ import "./modules/flip.js";
 
 
 const form = document.querySelector('.login__form');
-const formButton = document.querySelector('.btn__form');
+// const formButton = document.querySelector('.btn__form');
 
 
 form.onsubmit = function(e){
@@ -44,15 +44,15 @@ form.onsubmit = function(e){
   sendAjax('https://webdev-api.loftschool.com/login', formData)
   .then(function(response){
     localStorage.setItem('token', response.token);
-    if(1==1){
-      document.location.replace("localhost:8080/");
-    }else{
-      let content = document.createElement('div');
-      content.innerHTML = 'Вы не правильно ввели капчу!';
-      console.log(content);
+    // if(){
+      document.location.replace("http://kursgsg.ru/portfoliols/admin");
+    // }else{
+    //   let content = document.createElement('div');
+    //   content.innerHTML = 'Вы не правильно ввели капчу!';
+    //   console.log(content);
 
-    }
-  }, function(response){
+    // }
+  }, function(){
   })
 
 }

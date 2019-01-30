@@ -10,15 +10,15 @@ import works from './components/works.vue'
 
 const routes = [
   {
-    path: '/admin/',
+    path: '/portfoliols/admin/',
     component: skills
   },
   {
-    path: '/admin/blog',
+    path: '/portfoliols/admin/blog',
     component: blog
   },
   {
-    path: '/admin/works',
+    path: '/portfoliols/admin/works',
     component: works
   }
 ];
@@ -65,10 +65,11 @@ router.beforeEach((to, from, next) => {
     }, 
     function(){
       localStorage.removeItem("token");
-      document.location.replace("https://sergeykurnikov.github.io/portfoliols/");
+      document.location.replace("http://kursgsg.ru/portfoliols");
     })
     .then(function(response){
       if(response){
+        console.log(response.user.id)
         store.commit('updateUserId', response.user.id);
         next();
       }
