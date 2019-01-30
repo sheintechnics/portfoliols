@@ -7,12 +7,12 @@ script(type="text/x-template")#skills-list
 				
 script(type="text/x-template")#skills-item
 	.skills-row
-		.skills-row__title {{skillsGroupObj.skillsGroup}}
+		.skills-row__title {{skillsGroupObj.category}}
 		ul.skills-row__list
-			li.skills-row__item(v-for="(skillPercentage, skillTitle) in skillsGroupObj.skills")
-				skill(
-					:skillPercentage="skillPercentage"
-					:skillTitle="skillTitle"
+			li.skills-row__item(v-for="skill in skillsGroupObj.skills")
+				skill(v-if="skill.percents"
+					:skillPercentage="skill.percents"
+					:skillTitle="skill.title"
 				)
 
 script(type="text/x-template")#skill

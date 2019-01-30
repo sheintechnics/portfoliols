@@ -53,17 +53,17 @@ function validation(){
       }
     }
 
-    if(elems.email){
-      resetError(elems.email.parentNode);
-      if (!elems.email.value) {
-        showError(elems.email.parentNode, 'Вы не ввели ваш почтовый ящик!');
-      }else{
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if(reg.test(elems.email.value) == false) {
-          showError(elems.email.parentNode, 'Введите корректный e-mail!');
-       }
-      }
-    }
+    // if(elems.email){
+    //   resetError(elems.email.parentNode);
+    //   if (!elems.email.value) {
+    //     showError(elems.email.parentNode, 'Вы не ввели ваш почтовый ящик!');
+    //   }else{
+    //     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    //     if(reg.test(elems.email.value) == false) {
+    //       showError(elems.email.parentNode, 'Введите корректный e-mail!');
+    //    }
+    //   }
+    // }
 
     if(elems.message){
       resetError(elems.message.parentNode);
